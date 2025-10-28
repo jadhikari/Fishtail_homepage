@@ -4,179 +4,200 @@
 {% block title %}Home | Work News Platform{% endblock %}
 
 {% block extra_css %}
-  <!-- Core CSS for the home page -->
-  <link rel="stylesheet" href="{% static 'core/core.css' %}">
+    <!-- Core CSS for the home page -->
+    <link rel="stylesheet" href="{% static 'core/core.css' %}">
 {% endblock %}
 
 {% block content %}
-  <!-- Hero Section with CSS-only Multi-Image Slider -->
-  <header class="hero" id="home">
-    <!-- Slides -->
-    <div class="slide"></div>
-    <div class="slide"></div>
-    <div class="slide"></div>
-    <div class="slide"></div>
-    <div class="slide"></div>
-    <div class="slide"></div>
-    <!-- Content Overlay -->
-    <div class="hero-content">
-      <h1>{% trans "Your Gateway to Homes and Hostels" %}</h1>
-      <p>{% trans "Browse verified real estate and hostel listings to find your perfect stay or investment." %}</p>
-    </div>   
-  </header>
+    <!-- Hero Section with CSS-only Multi-Image Slider -->
+    <header class="hero" id="home">
+        <!-- Slides -->
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <!-- Content Overlay -->
+        <div class="hero-content">
+            <h1>{% trans "Your Gateway to Homes and Hostels" %}</h1>
+            <p>{% trans "Browse verified real estate and hostel listings to find your perfect stay or investment." %}</p>
+        </div>   
+    </header>
 
-  <!-- Features Section -->
-  <section class="container feature-section bg-light">
-    <div class="row justify-content-center">
-      <div class="col-12 text-center mb-3">
-        <h2 class="section-title">{% trans "Why Choose Us" %}</h2>
-        <p class="section-subtitle">{% trans "Your trusted partner in real estate and hostel solutions" %}</p>
-      </div>
+    <!-- Features Section -->
+    <div class="container-fluid features-news-wrapper">
+        <div class="row no-gutters"> 
+            <div class="col-10">
+                <section class="feature-section bg-light">
+                    <div class="row justify-content-center">
+                        <div class="col-12 text-center mb-3">
+                            <h2 class="section-title">{% trans "Why Choose Us" %}</h2>
+                            <p class="section-subtitle">{% trans "Your trusted partner in real estate and hostel solutions" %}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6 feature-box">
+                            <div class="feature-icon-wrapper">
+                                <div class="feature-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" viewBox="0 0 16 16">
+                                        <path d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+                                        <path d="M7 2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-9zM3 3h1v1H3V3zm0 2h1v1H3V5zm0 2h1v1H3V7zm0 2h1v1H3V9zm0 2h1v1H3v-1zm2-4h1v1H5V5zm0 2h1v1H5V7zm0 2h1v1H5V9zm0 2h1v1H5v-1zm2-4h1v1H7V5zm0 2h1v1H7V7zm0 2h1v1H7V9zm0 2h1v1H7v-1zm2-4h1v1H9V5zm0 2h1v1H9V7zm0 2h1v1H9V9zm0 2h1v1H9v-1zm2-4h1v1h-1V5zm0 2h1v1h-1V7zm0 2h1v1h-1V9zm0 2h1v1h-1v-1z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <h4><a href="#">{% trans "Property Listings" %}</a></h4>
+                            <p>{% trans "Explore verified real estate properties and premium hostel accommodations with detailed descriptions." %}</p>
+                        </div>
+                        <div class="col-md-3 col-sm-6 feature-box">
+                            <div class="feature-icon-wrapper">
+                                <div class="feature-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" viewBox="0 0 16 16">
+                                        <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <h4><a href="#">{% trans "Prime Locations" %}</a></h4>
+                            <p>{% trans "Discover properties in the best neighborhoods with comprehensive location insights." %}</p>
+                        </div>
+                        <div class="col-md-3 col-sm-6 feature-box">
+                            <div class="feature-icon-wrapper">
+                                <div class="feature-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" viewBox="0 0 16 16">
+                                        <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <h4><a href="#">{% trans "Expert Consultation" %}</a></h4>
+                            <p>{% trans "Get professional advice from our experienced real estate consultants and hostel advisors." %}</p>
+                        </div>
+                        <div class="col-md-3 col-sm-6 feature-box">
+                            <div class="feature-icon-wrapper">
+                                <div class="feature-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" viewBox="0 0 16 16">
+                                        <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                                        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <h4><a href="#">{% trans "Easy Booking" %}</a></h4>
+                            <p>{% trans "Simple and quick booking process for viewing properties or reserving hostel rooms with instant confirmation." %}</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="col-2">
+                <section class="news-section bg-light">
+                    <div class="row justify-content-center">
+                        <div class="col-12 text-center mb-3">
+                            <h2 class="section-title">{% trans "News" %}</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 news-box">
+                            <div class="feature-icon-wrapper">
+                            
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
     </div>
-    <div class="row">
-      <div class="col-md-3 col-sm-6 feature-box">
-        <div class="feature-icon-wrapper">
-          <div class="feature-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" viewBox="0 0 16 16">
-              <path d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
-              <path d="M7 2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-9zM3 3h1v1H3V3zm0 2h1v1H3V5zm0 2h1v1H3V7zm0 2h1v1H3V9zm0 2h1v1H3v-1zm2-4h1v1H5V5zm0 2h1v1H5V7zm0 2h1v1H5V9zm0 2h1v1H5v-1zm2-4h1v1H7V5zm0 2h1v1H7V7zm0 2h1v1H7V9zm0 2h1v1H7v-1zm2-4h1v1H9V5zm0 2h1v1H9V7zm0 2h1v1H9V9zm0 2h1v1H9v-1zm2-4h1v1h-1V5zm0 2h1v1h-1V7zm0 2h1v1h-1V9zm0 2h1v1h-1v-1z"/>
-            </svg>
-          </div>
-        </div>
-        <h4><a href="#">{% trans "Property Listings" %}</a></h4>
-        <p>{% trans "Explore verified real estate properties and premium hostel accommodations with detailed descriptions." %}</p>
-      </div>
-      <div class="col-md-3 col-sm-6 feature-box">
-        <div class="feature-icon-wrapper">
-          <div class="feature-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" viewBox="0 0 16 16">
-              <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
-            </svg>
-          </div>
-        </div>
-        <h4><a href="#">{% trans "Prime Locations" %}</a></h4>
-        <p>{% trans "Discover properties in the best neighborhoods with comprehensive location insights." %}</p>
-      </div>
-      <div class="col-md-3 col-sm-6 feature-box">
-        <div class="feature-icon-wrapper">
-          <div class="feature-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" viewBox="0 0 16 16">
-              <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
-            </svg>
-          </div>
-        </div>
-        <h4><a href="#">{% trans "Expert Consultation" %}</a></h4>
-        <p>{% trans "Get professional advice from our experienced real estate consultants and hostel advisors." %}</p>
-      </div>
-      <div class="col-md-3 col-sm-6 feature-box">
-        <div class="feature-icon-wrapper">
-          <div class="feature-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" viewBox="0 0 16 16">
-              <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
-              <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
-            </svg>
-          </div>
-        </div>
-        <h4><a href="#">{% trans "Easy Booking" %}</a></h4>
-        <p>{% trans "Simple and quick booking process for viewing properties or reserving hostel rooms with instant confirmation." %}</p>
-      </div>
-    </div>
-  </section>
 
-
-  <!-- Property & Hostel Process Section -->
-  <section class="process-section">
-    <div class="row justify-content-center">
-      <div class="col-12 text-center">
-        <h2 class="section-title">{% trans "How We Works" %}</h2>
-        <p class="section-subtitle">{% trans "Your journey to finding the perfect property or hostel accommodation" %}</p>
-      </div>
-    </div>
-    
-    <div class="row process-container">
-      <!-- Left Side: Image -->
-      <div class="col-md-4 text-center">
-        <div class="process-image-wrapper">
-          <img id="processImage" src="{% static 'images/steps/step1.png' %}" class="process-image img-fluid">
+    <!-- Property & Hostel Process Section -->
+    <section class="process-section">
+        <div class="row justify-content-center">
+            <div class="col-12 text-center">
+                <h2 class="section-title">{% trans "How We Works" %}</h2>
+                <p class="section-subtitle">{% trans "Your journey to finding the perfect property or hostel accommodation" %}</p>
+            </div>
         </div>
-      </div>
+        
+        <div class="row process-container">
+            <!-- Left Side: Image -->
+            <div class="col-md-4 text-center">
+                <div class="process-image-wrapper">
+                    <img id="processImage" src="{% static 'images/steps/step1.png' %}" class="process-image img-fluid">
+                </div>
+            </div>
 
-      <!-- Right Side: Steps List -->
-      <div class="col-md-8">
-        <div class="process-steps">
-          <div class="process-step active" data-image="{% static 'images/steps/step1.png' %}" data-number="01">
-            <div class="step-number">01</div>
-            <div class="step-content">
-              <h5>{% trans "Search & Browse" %}</h5>
-              <p>{% trans "Explore our verified listings of real estate properties and premium hostel accommodations." %}</p>
+            <!-- Right Side: Steps List -->
+            <div class="col-md-8">
+                <div class="process-steps">
+                    <div class="process-step active" data-image="{% static 'images/steps/step1.png' %}" data-number="01">
+                        <div class="step-number">01</div>
+                        <div class="step-content">
+                            <h5>{% trans "Search & Browse" %}</h5>
+                            <p>{% trans "Explore our verified listings of real estate properties and premium hostel accommodations." %}</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step" data-image="{% static 'images/steps/step2.png' %}" data-number="02">
+                        <div class="step-number">02</div>
+                        <div class="step-content">
+                            <h5>{% trans "Compare & Shortlist" %}</h5>
+                            <p>{% trans "Compare properties based on location, amenities, and pricing to create your shortlist." %}</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step" data-image="{% static 'images/steps/step3.jpg' %}" data-number="03">
+                        <div class="step-number">03</div>
+                        <div class="step-content">
+                            <h5>{% trans "Schedule Viewing" %}</h5>
+                            <p>{% trans "Book a convenient time to visit the property or hostel and see it in person." %}</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step" data-image="{% static 'images/steps/step4.jpg' %}" data-number="04">
+                        <div class="step-number">04</div>
+                        <div class="step-content">
+                            <h5>{% trans "Consultation & Advice" %}</h5>
+                            <p>{% trans "Get expert guidance from our consultants on property details, legal matters, and negotiations." %}</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step" data-image="{% static 'images/steps/step5.jpg' %}" data-number="05">
+                        <div class="step-number">05</div>
+                        <div class="step-content">
+                            <h5>{% trans "Finalize & Book" %}</h5>
+                            <p>{% trans "Complete documentation, secure your booking, and get instant confirmation for your stay or purchase." %}</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step" data-image="{% static 'images/steps/step6.png' %}" data-number="06">
+                        <div class="step-number">06</div>
+                        <div class="step-content">
+                            <h5>{% trans "Move In & Support" %}</h5>
+                            <p>{% trans "Enjoy ongoing support and assistance even after you've moved in or started your stay." %}</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-          
-          <div class="process-step" data-image="{% static 'images/steps/step2.png' %}" data-number="02">
-            <div class="step-number">02</div>
-            <div class="step-content">
-              <h5>{% trans "Compare & Shortlist" %}</h5>
-              <p>{% trans "Compare properties based on location, amenities, and pricing to create your shortlist." %}</p>
-            </div>
-          </div>
-          
-          <div class="process-step" data-image="{% static 'images/steps/step3.jpg' %}" data-number="03">
-            <div class="step-number">03</div>
-            <div class="step-content">
-              <h5>{% trans "Schedule Viewing" %}</h5>
-              <p>{% trans "Book a convenient time to visit the property or hostel and see it in person." %}</p>
-            </div>
-          </div>
-          
-          <div class="process-step" data-image="{% static 'images/steps/step4.jpg' %}" data-number="04">
-            <div class="step-number">04</div>
-            <div class="step-content">
-              <h5>{% trans "Consultation & Advice" %}</h5>
-              <p>{% trans "Get expert guidance from our consultants on property details, legal matters, and negotiations." %}</p>
-            </div>
-          </div>
-          
-          <div class="process-step" data-image="{% static 'images/steps/step5.jpg' %}" data-number="05">
-            <div class="step-number">05</div>
-            <div class="step-content">
-              <h5>{% trans "Finalize & Book" %}</h5>
-              <p>{% trans "Complete documentation, secure your booking, and get instant confirmation for your stay or purchase." %}</p>
-            </div>
-          </div>
-          
-          <div class="process-step" data-image="{% static 'images/steps/step6.png' %}" data-number="06">
-            <div class="step-number">06</div>
-            <div class="step-content">
-              <h5>{% trans "Move In & Support" %}</h5>
-              <p>{% trans "Enjoy ongoing support and assistance even after you've moved in or started your stay." %}</p>
-            </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const steps = document.querySelectorAll(".process-step");
-        const imageElement = document.getElementById("processImage");
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const steps = document.querySelectorAll(".process-step");
+            const imageElement = document.getElementById("processImage");
 
-        steps.forEach(step => {
-            step.addEventListener("mouseenter", function () {
-                const newImage = step.getAttribute("data-image");
-                if (imageElement && newImage) {
-                    imageElement.style.opacity = '0';
-                    setTimeout(() => {
-                        imageElement.src = newImage;
-                        imageElement.style.opacity = '1';
-                    }, 150);
-                }
+            steps.forEach(step => {
+                step.addEventListener("mouseenter", function () {
+                    const newImage = step.getAttribute("data-image");
+                    if (imageElement && newImage) {
+                        imageElement.style.opacity = '0';
+                        setTimeout(() => {
+                            imageElement.src = newImage;
+                            imageElement.style.opacity = '1';
+                        }, 150);
+                    }
 
-                steps.forEach(s => s.classList.remove("active"));
-                step.classList.add("active");
+                    steps.forEach(s => s.classList.remove("active"));
+                    step.classList.add("active");
+                });
             });
         });
-    });
-  </script>
+    </script>
 
 {% endblock %}
