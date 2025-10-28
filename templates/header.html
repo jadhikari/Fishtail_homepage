@@ -1,0 +1,95 @@
+{% load i18n %}
+{% load static %}
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark navbar-fishtail shadow-lg sticky-top">
+    <div class="container">
+        <!-- Brand Logo -->
+        <a class="navbar-brand fw-bold" href="{% url 'home' %}">
+            <img src="{% static 'logo/logo.png' %}" alt="Fishtail株式会社" height="40" class="me-2">
+            Fishtail株式会社
+        </a>
+
+        <!-- Navbar Toggler for Mobile -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar Items -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link {% if request.path == '/' or request.path == '/ja/' or request.path == '/en/' or request.path == '/ne/'%}active{% endif %}" href="{% url 'home' %}">
+                        <i class="bi bi-house-door"></i> {% trans "Home" %}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if '/about' in request.path %}active{% endif %}" href="{% url 'about' %}">
+                        <i class="bi bi-info-circle"></i> {% trans "About" %}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if '/news' in request.path %}active{% endif %}" href="{% url 'news' %}">
+                        <i class="bi bi-newspaper"></i> {% trans "News" %}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if '/career' in request.path %}active{% endif %}" href="{% url 'career' %}">
+                        <i class="bi bi-briefcase"></i> {% trans "Career" %}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if '/team' in request.path %}active{% endif %}" href="{% url 'team' %}">
+                        <i class="bi bi-people"></i> {% trans "Members" %}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if '/contact' in request.path %}active{% endif %}" href="{% url 'contact' %}">
+                        <i class="bi bi-envelope"></i> {% trans "Contact" %}
+                    </a>
+                </li>
+            </ul>
+        
+        
+            <!-- Language Dropdown -->
+            <form action="{% url 'set_language' %}" method="post" class="ms-3">
+                {% csrf_token %}
+                <input type="hidden" name="next" value="{{ request.get_full_path }}">
+                
+                <div class="dropdown">
+                    <button class="btn btn-sm btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"
+                        style="min-width: 120px; font-size: 14px;">
+                        {% if request.LANGUAGE_CODE == 'en' %}
+                            🇬🇧 English
+                        {% elif request.LANGUAGE_CODE == 'ja' %}
+                            🇯🇵 日本語
+                        {% elif request.LANGUAGE_CODE == 'ne' %}
+                            🇳🇵 नेपाली
+                        {% else %}
+                            🌍 Language
+                        {% endif %}
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-start" style="min-width: 120px; font-size: 14px; padding: 5px 10px;">
+                        <li>
+                            <button class="dropdown-item {% if request.LANGUAGE_CODE == 'en' %}active{% endif %}" type="submit" name="language" value="en">
+                                🇬🇧 English
+                            </button>
+                        </li>
+                        <li>
+                            <button class="dropdown-item {% if request.LANGUAGE_CODE == 'ja' %}active{% endif %}" type="submit" name="language" value="ja">
+                                🇯🇵 日本語
+                            </button>
+                        </li>
+                        <li>
+                            <button class="dropdown-item {% if request.LANGUAGE_CODE == 'ne' %}active{% endif %}" type="submit" name="language" value="ne">
+                                🇳🇵 नेपाली
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </form>
+            
+            
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,336 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-27 00:00+0000\n"
+"PO-Revision-Date: 2025-02-27 00:00+0000\n"
+"Last-Translator: Your Name <you@example.com>\n"
+"Language-Team: Japanese <your-email@example.com>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Home"
+msgstr "ホーム"
+
+msgid "About"
+msgstr "会社概要"
+
+msgid "News"
+msgstr "ニュース"
+
+msgid "Career"
+msgstr "採用情報"
+
+msgid "Members"
+msgstr "メンバー"
+
+msgid "Contact"
+msgstr "お問い合わせ"
+
+msgid "Company Information Coming Soon"
+msgstr "会社情報は近日公開予定"
+
+msgid "We are currently updating our company information. Please check back later for detailed information about our company."
+msgstr "現在、会社情報を更新中です。詳細な会社情報については、後日ご確認ください。"
+
+msgid "Business Associates"
+msgstr "ビジネスパートナー"
+
+msgid "Company"
+msgstr "会社"
+
+msgid "Further Information"
+msgstr "詳しい情報"
+
+msgid "Terms & Conditions"
+msgstr "利用規約"
+
+msgid "Privacy Policy"
+msgstr "プライバシーポリシー"
+
+msgid "Follow us"
+msgstr "フォローしてください"
+
+msgid "Subscribe for Updates"
+msgstr "最新情報を購読する"
+
+msgid "Get the latest news and job updates directly to your inbox."
+msgstr "最新のニュースや求人情報をあなたの受信箱に直接お届けします。"
+
+msgid "Subscribe"
+msgstr "購読する"
+
+msgid "Enter your email"
+msgstr "メールアドレスを入力してください"
+
+msgid "Your Gateway to Homes and Hostels"
+msgstr "理想のホステルや家を見つけよう"
+
+msgid "Browse verified real estate and hostel listings to find your perfect stay or investment."
+msgstr "信頼できる提供者からのホステル、アパート、物件をすべて1つの便利なプラットフォームで探せます。"
+
+msgid "About Us"
+msgstr "私たちについて"
+
+msgid "Company Information"
+msgstr "会社情報"
+
+msgid "Company Name"
+msgstr "会社名"
+
+msgid "Establishment"
+msgstr "設立"
+
+msgid "Representatives"
+msgstr "代表者"
+
+msgid "Total Stockholder's Equity"
+msgstr "総株主資本"
+
+msgid "Stock Listing"
+msgstr "株式上場"
+
+msgid "Number of Employees Consolidated"
+msgstr "従業員数（連結）"
+
+msgid "Tokyo Office"
+msgstr "東京オフィス"
+
+msgid "Other Offices"
+msgstr "その他のオフィス"
+
+msgid "Reliable News"
+msgstr "信頼できるニュース"
+
+msgid "news_related"
+msgstr "最新のビジネスおよびキャリアのトレンドに関する正確で綿密に調査されたニュースで常に最新情報を入手してください。"
+
+msgid "Career Insights"
+msgstr "キャリアインサイト"
+
+msgid "career_related"
+msgstr "私たちは、専門家の意見、ヒント、およびガイダンスを提供し、プロフェッショナルがキャリアで成功するのを支援します。"
+
+msgid "Community Engagement"
+msgstr "コミュニティ参加"
+
+msgid "community_related"
+msgstr "仕事とニュースの未来を形作るプロフェッショナルや思想的リーダーのネットワークに参加してください。"
+
+msgid "Our Mission"
+msgstr "私たちの使命"
+
+msgid "Consolidated"
+msgstr "連結"
+
+msgid "Non-Consolidated"
+msgstr "単体"
+
+msgid "Trending News"
+msgstr "トレンドニュース"
+
+msgid "Read More"
+msgstr "続きを読む"
+
+msgid "First"
+msgstr "最初"
+
+msgid "Previous"
+msgstr "前へ"
+
+msgid "Next"
+msgstr "次へ"
+
+msgid "Last"
+msgstr "最後"
+
+msgid "Back to News"
+msgstr "ニュースに戻る"
+
+msgid "Available Job Positions"
+msgstr "募集職種一覧"
+
+msgid "Explore the opportunities to join our dynamic team."
+msgstr "私たちの活気あるチームに参加する機会を探してみましょう。"
+
+msgid "Search by Job Title"
+msgstr "職種で検索"
+
+msgid "No jobs found."
+msgstr "求人が見つかりませんでした。"
+
+msgid "View Details"
+msgstr "詳細を見る"
+
+msgid "Posted on"
+msgstr "掲載日"
+
+msgid "Job Details"
+msgstr "求人詳細"
+
+msgid "Posted On:"
+msgstr "掲載日："
+
+msgid "Last Updated:"
+msgstr "最終更新日："
+
+msgid "Apply Now"
+msgstr "今すぐ応募"
+
+msgid "Back to job list"
+msgstr "求人一覧に戻る"
+
+msgid "Our Team"
+msgstr "私たちのチーム"
+
+msgid "Meet Our Team Members"
+msgstr "チームメンバーの紹介"
+
+msgid "Our team of highly skilled professionals brings years of experience across various industries, ensuring top-notch support tailored to your unique needs."
+msgstr "当社の優秀な専門家チームは、さまざまな業界での豊富な経験を活かし、お客様のニーズに合わせた最高のサポートを提供します。"
+
+msgid "Request a Consultation"
+msgstr "ご相談はこちら"
+
+msgid "Our Amazing Team"
+msgstr "素晴らしいチーム"
+
+msgid "Dedicated professionals behind our success."
+msgstr "私たちの成功を支える献身的な専門家たち。"
+
+msgid "Close"
+msgstr "閉じる"
+
+msgid "Contact Us"
+msgstr "お問い合わせ"
+
+msgid "Whether you are looking for job opportunities or business partnerships, our team is ready to assist you. Get in touch with us today."
+msgstr "求人情報やビジネスパートナーシップをお探しの場合でも、当社のチームがサポートいたします。お気軽にお問い合わせください。"
+
+msgid "Our Office"
+msgstr "当社オフィス"
+
+msgid "Address"
+msgstr "住所"
+
+msgid "Phone"
+msgstr "電話"
+
+msgid "Email"
+msgstr "メール"
+
+msgid "Website"
+msgstr "ウェブサイト"
+
+msgid "Send Us a Message"
+msgstr "メッセージを送る"
+
+msgid "Your Name"
+msgstr "お名前"
+
+msgid "Your Email"
+msgstr "メールアドレス"
+
+msgid "Phone Number"
+msgstr "電話番号"
+
+msgid "Your Address"
+msgstr "ご住所"
+
+msgid "Purpose of Contact"
+msgstr "お問い合わせの目的"
+
+msgid "Select Purpose"
+msgstr "目的を選択"
+
+msgid "Looking for a Job"
+msgstr "求人を探している"
+
+msgid "Business Partnership"
+msgstr "ビジネスパートナーシップ"
+
+msgid "General Inquiry"
+msgstr "一般的なお問い合せ"
+
+msgid "Your Message"
+msgstr "メッセージ内容"
+
+msgid "Send Message"
+msgstr "送信"
+
+msgid "Our Location"
+msgstr "所在地"
+
+msgid "Why Choose Us"
+msgstr "選ばれる理由"
+
+msgid "Your trusted partner in real estate and hostel solutions"
+msgstr "不動産とホステルのソリューションにおける信頼できるパートナー"
+
+msgid "Property Listings"
+msgstr "物件一覧"
+
+msgid "Explore verified real estate properties and premium hostel accommodations with detailed descriptions."
+msgstr "詳細な説明付きの検証済み不動産物件とプレミアムホステル宿泊施設をご覧ください。"
+
+msgid "Prime Locations"
+msgstr "最高の立地"
+
+msgid "Discover properties in the best neighborhoods with comprehensive location insights."
+msgstr "包括的な立地情報と共に最高の地域の物件を見つけましょう。"
+
+msgid "Expert Consultation"
+msgstr "専門家による相談"
+
+msgid "Get professional advice from our experienced real estate consultants and hostel advisors."
+msgstr "経験豊富な不動産コンサルタントとホステルアドバイザーから専門的なアドバイスを受けられます。"
+
+msgid "Easy Booking"
+msgstr "簡単予約"
+
+msgid "Simple and quick booking process for viewing properties or reserving hostel rooms with instant confirmation."
+msgstr "物件の見学やホステル客室の予約が簡単で迅速、即座に確認できる予約プロセスです。"
+
+msgid "How It Works"
+msgstr "ご利用の流れ"
+
+msgid "Your journey to finding the perfect property or hostel accommodation"
+msgstr "理想の物件やホステルを見つけるまでの旅路"
+
+msgid "Search & Browse"
+msgstr "検索・閲覧"
+
+msgid "Explore our verified listings of real estate properties and premium hostel accommodations."
+msgstr "検証済みの不動産物件とプレミアムホステル宿泊施設のリストをご覧ください。"
+
+msgid "Compare & Shortlist"
+msgstr "比較・候補リスト作成"
+
+msgid "Compare properties based on location, amenities, and pricing to create your shortlist."
+msgstr "立地、設備、価格に基づいて物件を比較し、候補リストを作成しましょう。"
+
+msgid "Schedule Viewing"
+msgstr "見学の予約"
+
+msgid "Book a convenient time to visit the property or hostel and see it in person."
+msgstr "ご都合の良い時間に物件やホステルの見学を予約し、実際に見に行きましょう。"
+
+msgid "Consultation & Advice"
+msgstr "相談・アドバイス"
+
+msgid "Get expert guidance from our consultants on property details, legal matters, and negotiations."
+msgstr "物件の詳細、法的問題、交渉について、経験豊富なコンサルタントから専門的なガイダンスを受けられます。"
+
+msgid "Finalize & Book"
+msgstr "確定・予約"
+
+msgid "Complete documentation, secure your booking, and get instant confirmation for your stay or purchase."
+msgstr "書類を完成させ、予約を確定し、滞在や購入の即座の確認を受けましょう。"
+
+msgid "Move In & Support"
+msgstr "入居・サポート"
+
+msgid "Enjoy ongoing support and assistance even after you've moved in or started your stay."
+msgstr "入居後や滞在開始後も、継続的なサポートと支援をご利用いただけます。"

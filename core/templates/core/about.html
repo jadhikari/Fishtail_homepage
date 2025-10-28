@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block content %}
+<div class="container my-5">
+    {% if company_info %}
+    <div class="row align-items-center">
+        <div class="col-lg-6">
+            <h1 class="text-center display-4 fw-bold">{% trans "About Us" %}</h1>
+            {{ company_info.get_translated_about | safe}}
+        </div>
+        <div class="col-lg-6">
+            <img src="../../static/images/about.jpg" alt="About Us" class="img-fluid rounded shadow" 
+                style="height:400px; width:100%;">
+        </div>
+    </div>
+    {% else %}
+    <!-- No Company Info Available -->
+    <div class="row">
+        <div class="col-12 text-center">
+            <h1 class="display-4 fw-bold mb-4">{% trans "About Us" %}</h1>
+            <div class="alert alert-info">
+                <h4>{% trans "Company Information Coming Soon" %}</h4>
+                <p>{% trans "We are currently updating our company information. Please check back later for detailed information about our company." %}</p>
+            </div>
+            <div class="mt-4">
+                <img src="../../static/images/about.jpg" alt="About Us" class="img-fluid rounded shadow" 
+                    style="height:400px; width:100%;">
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    {% if company_info %}
+    <!-- Company Information Section -->
+    <div class="row mt-5">
+        <div class="col">
+            <h2 class="text-center mb-4">{% trans "Company Information" %}</h2>
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                    <tbody>
+                        <tr>
+                            <th scope="row">{% trans "Company Name" %}</th>
+                            <td>{{ company_info.get_translated_name }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">{% trans "Establishment" %}</th>
+                            <td>{{ company_info.establishment_date }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">{% trans "Representatives" %}</th>
+                            <td>{{ company_info.get_translated_representative }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">{% trans "Total Stockholder's Equity" %}</th>
+                            <td>{{ company_info.get_translated_total_equity }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">{% trans "Stock Listing" %}</th>
+                            <td>{{ company_info.get_translated_stock_listing }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">{% trans "Number of Employees" %}</th>
+                            <td>{% trans "Consolidated" %}: {{ company_info.employees_consolidated }} | 
+                                {% trans "Non-Consolidated" %}: {{ company_info.employees_non_consolidated }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">{% trans "Business Portfolio" %}</th>
+                            <td>{{ company_info.get_translated_business_portfolio | safe }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">{% trans "Tokyo Office" %}</th>
+                            <td>
+                                {{ company_info.get_translated_office_address | safe }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">{% trans "Other Offices" %}</th>
+                            <td>{{ company_info.get_translated_other_offices }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <div class="row mt-5">
+        <div class="col-md-4">
+            <div class="card h-100 shadow">
+                <div class="card-body text-center">
+                    <i class="bi bi-newspaper fs-1 text-primary"></i>
+                    <h5 class="card-title mt-3">
+                        <a href="{% url 'news' %}" class="text-decoration-none">
+                            {% trans "Reliable News" %}
+                        </a>
+                    </h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 shadow">
+                <div class="card-body text-center">
+                    <i class="bi bi-briefcase fs-1 text-success"></i>
+                    <h5 class="card-title mt-3">
+                        <a href="{% url 'career' %}" class="text-decoration-none">
+                            {% trans "Career Insights" %}
+                        </a>
+                    </h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 shadow">
+                <div class="card-body text-center">
+                    <i class="bi bi-people fs-1 text-danger"></i>
+                    <h5 class="card-title mt-3">
+                        <a href="#" class="text-decoration-none">
+                            {% trans "Community Engagement" %}
+                        </a>
+                    </h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% if company_info %}
+    <div class="row mt-5">
+        <div class="col text-center">
+            <h2>{% trans "Our Mission" %}</h2>
+            <p class="lead">
+                {{ company_info.get_translated_mission | safe }}
+            </p>
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

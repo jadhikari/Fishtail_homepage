@@ -1,0 +1,121 @@
+/* Custom Fishtail Brand Colors */
+:root {
+    --fishtail-primary: #2998cc; /* Deep blue - adjust to match your logo */
+    --fishtail-secondary: #1e3a8a; /* Lighter blue - adjust to match your logo */
+    --fishtail-accent: #f59e0b; /* Orange accent - adjust to match your logo */
+    --fishtail-text-light: #ffffff;
+    --fishtail-text-dark: #1f2937;
+}
+
+/* Header Styling */
+.navbar-fishtail {
+    background: linear-gradient(135deg, var(--fishtail-primary) 0%, var(--fishtail-secondary) 100%) !important;
+    border-bottom: 3px solid var(--fishtail-accent);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.navbar-fishtail .navbar-brand {
+    color: var(--fishtail-text-light) !important;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-fishtail .navbar-brand:hover {
+    color: var(--fishtail-accent) !important;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+.navbar-fishtail .nav-link {
+    color: var(--fishtail-text-light) !important;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.navbar-fishtail .nav-link:hover {
+    color: var(--fishtail-accent) !important;
+    transform: translateY(-2px);
+}
+
+.navbar-fishtail .nav-link.active {
+    color: var(--fishtail-accent) !important;
+    font-weight: 600;
+}
+
+/* Footer Styling */
+.footer-fishtail {
+    background: linear-gradient(135deg, var(--fishtail-primary) 0%, var(--fishtail-secondary) 100%) !important;
+    border-top: 3px solid var(--fishtail-accent);
+    box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1), 0 -2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.footer-fishtail h5 {
+    color: var(--fishtail-text-light) !important;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.footer-fishtail p {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.footer-fishtail .text-light {
+    color: rgba(255, 255, 255, 0.8) !important;
+    transition: all 0.3s ease;
+}
+
+.footer-fishtail .text-light:hover {
+    color: var(--fishtail-accent) !important;
+    transform: translateX(5px);
+}
+
+.footer-fishtail .btn-primary {
+    background-color: var(--fishtail-accent) !important;
+    border-color: var(--fishtail-accent) !important;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.footer-fishtail .btn-primary:hover {
+    background-color: #d97706 !important;
+    border-color: #d97706 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.footer-fishtail .form-control {
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--fishtail-text-light);
+}
+
+.footer-fishtail .form-control:focus {
+    border-color: var(--fishtail-accent);
+    box-shadow: 0 0 0 0.2rem rgba(245, 158, 11, 0.25);
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.footer-fishtail .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Social Media Icons */
+.footer-fishtail .bi {
+    transition: all 0.3s ease;
+}
+
+.footer-fishtail .bi:hover {
+    color: var(--fishtail-accent) !important;
+    transform: scale(1.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .navbar-fishtail .navbar-brand {
+        font-size: 1.1rem;
+    }
+    
+    .footer-fishtail h5 {
+        font-size: 1rem;
+    }
+}

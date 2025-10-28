@@ -1,0 +1,336 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-27 00:00+0000\n"
+"PO-Revision-Date: 2025-02-27 00:00+0000\n"
+"Last-Translator: Your Name <you@example.com>\n"
+"Language-Team: Nepali <your-email@example.com>\n"
+"Language: ne\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Home"
+msgstr "गृहपृष्ठ"
+
+msgid "About"
+msgstr "हाम्रो बारेमा"
+
+msgid "News"
+msgstr "समाचार"
+
+msgid "Career"
+msgstr "क्यारियर"
+
+msgid "Members"
+msgstr "सदस्यहरू"
+
+msgid "Contact"
+msgstr "सम्पर्क"
+
+msgid "Company Information Coming Soon"
+msgstr "कम्पनी जानकारी जल्दै आउनेछ"
+
+msgid "We are currently updating our company information. Please check back later for detailed information about our company."
+msgstr "हामी हाल कम्पनी जानकारी अपडेट गर्दैछौं। हाम्रो कम्पनीको विस्तृत जानकारीको लागि कृपया पछि फेरि जाँच गर्नुहोस्।"
+
+msgid "Business Associates"
+msgstr "व्यावसायिक साझेदार"
+
+msgid "Company"
+msgstr "कम्पनी"
+
+msgid "Further Information"
+msgstr "थप जानकारी"
+
+msgid "Terms & Conditions"
+msgstr "नियम र सर्तहरू"
+
+msgid "Privacy Policy"
+msgstr "गोपनीयता नीति"
+
+msgid "Follow us"
+msgstr "हाम्रो पछ्याउनुहोस्"
+
+msgid "Subscribe for Updates"
+msgstr "अपडेटहरूको लागि सदस्यता लिनुहोस्"
+
+msgid "Get the latest news and job updates directly to your inbox."
+msgstr "नवीनतम समाचार र रोजगार अद्यावधिकहरू सिधै तपाईंको इनबक्समा प्राप्त गर्नुहोस्।"
+
+msgid "Subscribe"
+msgstr "सदस्यता लिनुहोस्"
+
+msgid "Enter your email"
+msgstr "तपाईंको इमेल प्रविष्ट गर्नुहोस्"
+
+msgid "Your Gateway to Homes and Hostels"
+msgstr "आफ्नो उपयुक्त होस्टल वा घर खोज्नुहोस्"
+
+msgid "Browse verified real estate and hostel listings to find your perfect stay or investment."
+msgstr "विश्वसनीय प्रदायकहरूबाट होस्टल, अपार्टमेन्ट, र सम्पत्तिहरू एकै सुविधाजनक प्लेटफर्ममा अन्वेषण गर्नुहोस्।"
+
+msgid "About Us"
+msgstr "हाम्रो बारेमा"
+
+msgid "Company Information"
+msgstr "कम्पनी जानकारी"
+
+msgid "Company Name"
+msgstr "कम्पनी नाम"
+
+msgid "Establishment"
+msgstr "स्थापना"
+
+msgid "Representatives"
+msgstr "प्रतिनिधिहरू"
+
+msgid "Total Stockholder's Equity"
+msgstr "कुल शेयरधारक इक्विटी"
+
+msgid "Stock Listing"
+msgstr "शेयर सूचीकरण"
+
+msgid "Number of Employees Consolidated"
+msgstr "कर्मचारी संख्या (समेकित)"
+
+msgid "Tokyo Office"
+msgstr "टोकियो कार्यालय"
+
+msgid "Other Offices"
+msgstr "अन्य कार्यालयहरू"
+
+msgid "Reliable News"
+msgstr "विश्वसनीय समाचार"
+
+msgid "news_related"
+msgstr "नवीनतम व्यवसाय र करियर प्रवृत्तिहरूमा सटीक र राम्रोसँग अनुसन्धान गरिएका समाचारहरूमा अपडेट रहनुहोस्।"
+
+msgid "Career Insights"
+msgstr "करियर अन्तरदृष्टि"
+
+msgid "career_related"
+msgstr "हामी पेशेवरहरूलाई उनीहरूको करियरमा उत्कृष्ट बनाउन विशेषज्ञ विचारहरू, सुझावहरू, र मार्गदर्शन प्रदान गर्छौं।"
+
+msgid "Community Engagement"
+msgstr "समुदाय संलग्नता"
+
+msgid "community_related"
+msgstr "काम र समाचारको भविष्य निर्माण गर्ने पेशेवरहरू र विचारशील नेताहरूको हाम्रो सञ्जालमा सामेल हुनुहोस्।"
+
+msgid "Our Mission"
+msgstr "हाम्रो मिशन"
+
+msgid "Consolidated"
+msgstr "समेकित"
+
+msgid "Non-Consolidated"
+msgstr "गैर-एकीकृत"
+
+msgid "Trending News"
+msgstr "प्रचलित समाचार"
+
+msgid "Read More"
+msgstr "थप पढ्नुहोस्"
+
+msgid "First"
+msgstr "पहिलो"
+
+msgid "Previous"
+msgstr "अघिल्लो"
+
+msgid "Next"
+msgstr "अर्को"
+
+msgid "Last"
+msgstr "अन्तिम"
+
+msgid "Back to News"
+msgstr "समाचारमा फर्कनुहोस्"
+
+msgid "Available Job Positions"
+msgstr "उपलब्ध जागिर पदहरू"
+
+msgid "Explore the opportunities to join our dynamic team."
+msgstr "हाम्रो ऊर्जावान टोलीमा सामेल हुने अवसरहरू अन्वेषण गर्नुहोस्।"
+
+msgid "Search by Job Title"
+msgstr "कामको शीर्षक अनुसार खोज्नुहोस्"
+
+msgid "No jobs found."
+msgstr "कुनै पनि जागिर फेला परेन।"
+
+msgid "View Details"
+msgstr "विवरण हेर्नुहोस्"
+
+msgid "Posted on"
+msgstr "प्रकाशित मिति"
+
+msgid "Job Details"
+msgstr "रोजगार विवरण"
+
+msgid "Posted On:"
+msgstr "प्रकाशित मिति:"
+
+msgid "Last Updated:"
+msgstr "अन्तिम अपडेट:"
+
+msgid "Apply Now"
+msgstr "अहिले आवेदन दिनुहोस्"
+
+msgid "Back to job list"
+msgstr "रोजगार सूचीमा फर्कनुहोस्"
+
+msgid "Our Team"
+msgstr "हाम्रो टोली"
+
+msgid "Meet Our Team Members"
+msgstr "हाम्रो टोलीका सदस्यहरूलाई भेट्नुहोस्"
+
+msgid "Our team of highly skilled professionals brings years of experience across various industries, ensuring top-notch support tailored to your unique needs."
+msgstr "हाम्रो दक्ष व्यवसायिकहरूको टोलीसँग विभिन्न उद्योगहरूमा धेरै वर्षको अनुभव छ, जसले तपाईंको आवश्यकताअनुसार उत्कृष्ट समर्थन सुनिश्चित गर्दछ।"
+
+msgid "Request a Consultation"
+msgstr "परामर्शको लागि अनुरोध गर्नुहोस्"
+
+msgid "Our Amazing Team"
+msgstr "हाम्रो अद्भुत टोली"
+
+msgid "Dedicated professionals behind our success."
+msgstr "हाम्रो सफलताका पछाडि समर्पित व्यवसायिकहरू।"
+
+msgid "Close"
+msgstr "बन्द गर्नुहोस्"
+
+msgid "Contact Us"
+msgstr "सम्पर्क गर्नुहोस्"
+
+msgid "Whether you are looking for job opportunities or business partnerships, our team is ready to assist you. Get in touch with us today."
+msgstr "तपाईं जागिरको अवसर खोज्दै हुनुहुन्छ वा व्यापार साझेदारीको खोजीमा हुनुहुन्छ भने, हाम्रो टिम तपाईंलाई सहयोग गर्न तयार छ। आजै हामीसँग सम्पर्क गर्नुहोस्।"
+
+msgid "Our Office"
+msgstr "हाम्रो कार्यालय"
+
+msgid "Address"
+msgstr "ठेगाना"
+
+msgid "Phone"
+msgstr "फोन"
+
+msgid "Email"
+msgstr "इमेल"
+
+msgid "Website"
+msgstr "वेबसाइट"
+
+msgid "Send Us a Message"
+msgstr "हामीलाई सन्देश पठाउनुहोस्"
+
+msgid "Your Name"
+msgstr "तपाईंको नाम"
+
+msgid "Your Email"
+msgstr "तपाईंको इमेल"
+
+msgid "Phone Number"
+msgstr "फोन नम्बर"
+
+msgid "Your Address"
+msgstr "तपाईंको ठेगाना"
+
+msgid "Purpose of Contact"
+msgstr "सम्पर्कको उद्देश्य"
+
+msgid "Select Purpose"
+msgstr "उद्देश्य चयन गर्नुहोस्"
+
+msgid "Looking for a Job"
+msgstr "जागिर खोज्दै"
+
+msgid "Business Partnership"
+msgstr "व्यापार साझेदारी"
+
+msgid "General Inquiry"
+msgstr "सामान्य सोधपुछ"
+
+msgid "Your Message"
+msgstr "तपाईंको सन्देश"
+
+msgid "Send Message"
+msgstr "सन्देश पठाउनुहोस्"
+
+msgid "Our Location"
+msgstr "हाम्रो स्थान"
+
+msgid "Why Choose Us"
+msgstr "हामीलाई किन छान्ने"
+
+msgid "Your trusted partner in real estate and hostel solutions"
+msgstr "रियल एस्टेट र होस्टेल समाधानमा तपाईंको विश्वसनीय साझेदार"
+
+msgid "Property Listings"
+msgstr "सम्पत्ति सूची"
+
+msgid "Explore verified real estate properties and premium hostel accommodations with detailed descriptions."
+msgstr "विस्तृत विवरणका साथ प्रमाणित रियल एस्टेट सम्पत्तिहरू र प्रिमियम होस्टेल आवासहरू अन्वेषण गर्नुहोस्।"
+
+msgid "Prime Locations"
+msgstr "उत्कृष्ट स्थानहरू"
+
+msgid "Discover properties in the best neighborhoods with comprehensive location insights."
+msgstr "व्यापक स्थान अन्तर्दृष्टिका साथ उत्तम छिमेकहरूमा सम्पत्तिहरू फेला पार्नुहोस्।"
+
+msgid "Expert Consultation"
+msgstr "विशेषज्ञ परामर्श"
+
+msgid "Get professional advice from our experienced real estate consultants and hostel advisors."
+msgstr "हाम्रा अनुभवी रियल एस्टेट सल्लाहकारहरू र होस्टेल सल्लाहकारहरूबाट व्यावसायिक सल्लाह प्राप्त गर्नुहोस्।"
+
+msgid "Easy Booking"
+msgstr "सजिलो बुकिङ"
+
+msgid "Simple and quick booking process for viewing properties or reserving hostel rooms with instant confirmation."
+msgstr "सम्पत्तिहरू हेर्न वा तत्काल पुष्टिका साथ होस्टेल कोठाहरू रिजर्भ गर्नको लागि सरल र छिटो बुकिङ प्रक्रिया।"
+
+msgid "How It Works"
+msgstr "यसले कसरी काम गर्छ"
+
+msgid "Your journey to finding the perfect property or hostel accommodation"
+msgstr "उत्तम सम्पत्ति वा होस्टेल आवास फेला पार्ने तपाईंको यात्रा"
+
+msgid "Search & Browse"
+msgstr "खोज र ब्राउज"
+
+msgid "Explore our verified listings of real estate properties and premium hostel accommodations."
+msgstr "हाम्रा प्रमाणित रियल एस्टेट सम्पत्तिहरू र प्रिमियम होस्टेल आवासहरूको सूचीहरू अन्वेषण गर्नुहोस्।"
+
+msgid "Compare & Shortlist"
+msgstr "तुलना र छोटो सूची"
+
+msgid "Compare properties based on location, amenities, and pricing to create your shortlist."
+msgstr "स्थान, सुविधाहरू, र मूल्य आधारमा सम्पत्तिहरू तुलना गरेर आफ्नो छोटो सूची बनाउनुहोस्।"
+
+msgid "Schedule Viewing"
+msgstr "हेर्ने समय निर्धारण"
+
+msgid "Book a convenient time to visit the property or hostel and see it in person."
+msgstr "सम्पत्ति वा होस्टेल भ्रमण गर्न र व्यक्तिगत रूपमा हेर्नको लागि सुविधाजनक समय बुक गर्नुहोस्।"
+
+msgid "Consultation & Advice"
+msgstr "परामर्श र सल्लाह"
+
+msgid "Get expert guidance from our consultants on property details, legal matters, and negotiations."
+msgstr "सम्पत्ति विवरण, कानुनी मामिलाहरू, र बार्तालापहरूमा हाम्रा सल्लाहकारहरूबाट विशेषज्ञ मार्गदर्शन प्राप्त गर्नुहोस्।"
+
+msgid "Finalize & Book"
+msgstr "अन्तिम रुप दिनुहोस् र बुक गर्नुहोस्"
+
+msgid "Complete documentation, secure your booking, and get instant confirmation for your stay or purchase."
+msgstr "कागजातहरू पूरा गर्नुहोस्, आफ्नो बुकिङ सुरक्षित गर्नुहोस्, र तपाईंको बसाइ वा खरिदको लागि तत्काल पुष्टि प्राप्त गर्नुहोस्।"
+
+msgid "Move In & Support"
+msgstr "सर्नुहोस् र सहयोग"
+
+msgid "Enjoy ongoing support and assistance even after you've moved in or started your stay."
+msgstr "तपाईंले सरेका वा बसाइ सुरु गरेपछि पनि निरन्तर सहयोग र सहायता प्राप्त गर्नुहोस्।"

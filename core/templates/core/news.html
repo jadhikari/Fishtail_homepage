@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+{% block title %}News | Work News Platform{% endblock %}
+
+{% block extra_css %}
+  <!-- Core CSS for the home page -->
+  <link rel="stylesheet" href="{% static 'core/core.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <!-- Main News Section -->
+    <div class="row">
+        <div class="col-md-8">
+            {% if top_news %}
+            <div class="card mb-4">
+                {% if top_news.image %}
+                    <img src="{{ top_news.image.url }}" class="card-img-top" alt="{{ top_news.get_translated_header }}"
+                    style="margin: 20px auto; height:400px; max-width:90%"
+                    >
+                {% endif %}
+                <div class="card-body">
+                    <h2 class="card-title">{{ top_news.get_translated_header }}</h2>
+                    <p class="card-text">
+                        {{ top_news.get_translated_content|slice:":400"|safe }}...
+                    </p>
+                    <a href="{% url 'news_detail' top_news.unique_id %}" class="btn btn-primary">{% trans "Read More" %}</a>
+                </div>
+            </div>
+            {% else %}
+            <div class="card mb-4">
+                <div class="card-body text-center">
+                    <h2 class="card-title">{% trans "No News Available" %}</h2>
+                    <p class="card-text">{% trans "There are currently no news articles to display." %}</p>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+        
+        <!-- Sidebar: Trending News -->
+        <div class="col-md-4">
+            <h4>{% trans "Trending News" %}</h4>
+            {% if trending_news %}
+            <ul class="list-group">
+                {% for news in trending_news %}
+                <li class="list-group-item">
+                    <a href="{% url 'news_detail' news.unique_id %}">{{ news.get_translated_header }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <div class="alert alert-info">
+                {% trans "No trending news available." %}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    
+    <!-- Other News Grid -->
+    {% if latest_news %}
+    <div class="row mt-4">
+        {% for news in latest_news %}
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                {% if news.image %}
+                    <img src="{{ news.image.url }}" class="card-img-top" alt="{{ news.get_translated_header }}"
+                    style="margin: 20px auto; height:250px; max-width:90%">
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title text-center">{{ news.get_translated_header|slice:":10" }}...</h5>
+                    <p class="card-text">
+                            {{ news.get_translated_content|slice:":100"|safe }}...
+                    </p>
+                    <a href="{% url 'news_detail' news.unique_id %}" class="btn btn-primary btn-sm">{% trans "Read More" %}</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <!-- Pagination Controls -->
+    {% if latest_news.has_other_pages %}
+    <div class="d-flex justify-content-center mt-4">
+        <nav>
+            <ul class="pagination pagination-sm">
+                {% if latest_news.has_previous %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page=1">&laquo;&laquo; {% trans "First" %}</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ latest_news.previous_page_number }}">&laquo; {% trans "Previous" %}</a>
+                    </li>
+                {% endif %}
+
+                <li class="page-item active">
+                    <span class="page-link">
+                        Page {{ latest_news.number }} of {{ latest_news.paginator.num_pages }}
+                    </span>
+                </li>
+
+                {% if latest_news.has_next %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ latest_news.next_page_number }}">{% trans "Next" %} &raquo;</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ latest_news.paginator.num_pages }}">{% trans "Last" %} &raquo;&raquo;</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </nav>
+    </div>
+    {% endif %}
+
+
+</div>
+
+{% endblock %}
