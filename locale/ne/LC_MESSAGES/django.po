@@ -293,7 +293,7 @@ msgstr "सजिलो बुकिङ"
 msgid "Simple and quick booking process for viewing properties or reserving hostel rooms with instant confirmation."
 msgstr "सम्पत्तिहरू हेर्न वा तत्काल पुष्टिका साथ होस्टेल कोठाहरू रिजर्भ गर्नको लागि सरल र छिटो बुकिङ प्रक्रिया।"
 
-msgid "How It Works"
+msgid "How We Works"
 msgstr "यसले कसरी काम गर्छ"
 
 msgid "Your journey to finding the perfect property or hostel accommodation"

@@ -293,7 +293,7 @@ msgstr "簡単予約"
 msgid "Simple and quick booking process for viewing properties or reserving hostel rooms with instant confirmation."
 msgstr "物件の見学やホステル客室の予約が簡単で迅速、即座に確認できる予約プロセスです。"
 
-msgid "How It Works"
+msgid "How We Works"
 msgstr "ご利用の流れ"
 
 msgid "Your journey to finding the perfect property or hostel accommodation"
