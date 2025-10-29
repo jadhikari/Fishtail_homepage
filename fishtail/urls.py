@@ -24,6 +24,9 @@ urlpatterns = i18n_patterns(
     path('admin/', admin.site.urls),
     path('', include('core.urls')),  # Main app URLs
     path('i18n/', include('django.conf.urls.i18n')),  # Language switching
+    path("ckeditor5/", include('django_ckeditor_5.urls')),  # CKEditor 5 URLs
 )
+
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

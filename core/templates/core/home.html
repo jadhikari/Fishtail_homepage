@@ -95,9 +95,20 @@
                     </div>
                     <div class="row">
                         <div class="col-12 news-box">
-                            <div class="feature-icon-wrapper">
-                            
-                            </div>
+                            {% if recent_news %}
+                                {% for news in recent_news %}
+                                    <div class="news-item">
+                                        <div class="news-date">{{ news.created_at|date:"M d, Y" }}</div>
+                                        <div class="news-text">
+                                            <a href="{% url 'news_detail' news.unique_id %}">{{ news.get_translated_header }}</a>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            {% else %}
+                                <div class="news-item">
+                                    <div class="news-text">{% trans "No news available" %}</div>
+                                </div>
+                            {% endif %}
                         </div>
                     </div>
                 </section>
