@@ -100,7 +100,8 @@
                                     <div class="news-item">
                                         <div class="news-date">{{ news.created_at|date:"M d, Y" }}</div>
                                         <div class="news-text">
-                                            <a href="{% url 'news_detail' news.unique_id %}">{{ news.get_translated_header }}</a>
+                                            <a href="{% url 'news_detail' news.unique_id %}">
+                                                <b>{{ news.get_translated_header }}</b></a>
                                         </div>
                                     </div>
                                 {% endfor %}

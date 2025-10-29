@@ -17,7 +17,7 @@
             <div class="card mb-4">
                 {% if top_news.image %}
                     <img src="{{ top_news.image.url }}" class="card-img-top" alt="{{ top_news.get_translated_header }}"
-                    style="margin: 20px auto; height:400px; max-width:90%"
+                    style="margin: 20px auto; height:200px; width:180px"
                     >
                 {% endif %}
                 <div class="card-body">
@@ -65,7 +65,7 @@
             <div class="card">
                 {% if news.image %}
                     <img src="{{ news.image.url }}" class="card-img-top" alt="{{ news.get_translated_header }}"
-                    style="margin: 20px auto; height:250px; max-width:90%">
+                    style="margin: 20px auto; height:150px; width:120px">
                 {% endif %}
                 <div class="card-body">
                     <h5 class="card-title text-center">{{ news.get_translated_header|slice:":10" }}...</h5>

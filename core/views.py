@@ -8,7 +8,7 @@ from django.utils.translation import get_language
 
 
 def home(request):
-    # Fetch recent news items (latest 5) for the home page
+    # Fetch recent news items (latest 7) for the home page
     recent_news = models.News.objects.exclude(unique_id="").order_by('-created_at')[:5]
     context = {
         'recent_news': recent_news
