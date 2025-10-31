@@ -155,31 +155,25 @@ class CompanyInfo(BaseModel):
     name_ne = models.CharField(max_length=255)
     establishment_date = models.DateField()
     representative_en = models.CharField(max_length=255)
-    representative_ja = models.CharField(max_length=255)
-    representative_ne = models.CharField(max_length=255)
-    total_equity_en = models.CharField(max_length=255)
-    total_equity_ja = models.CharField(max_length=255, blank=True, null=True)
-    total_equity_ne = models.CharField(max_length=255, blank=True, null=True)
-    stock_listing_en = models.CharField(max_length=255)
-    stock_listing_ja = models.CharField(max_length=255)
-    stock_listing_ne = models.CharField(max_length=255)
-    employees_consolidated = models.PositiveIntegerField()
-    employees_non_consolidated = models.PositiveIntegerField()
+    representative_ja = models.CharField(max_length=255, blank=True, null=True)
+    representative_ne = models.CharField(max_length=255, blank=True, null=True)
+    capital = models.CharField(max_length=20)
+    employees_num = models.PositiveIntegerField()
     business_portfolio_en = CKEditor5Field()
-    business_portfolio_ja = CKEditor5Field()
-    business_portfolio_ne = CKEditor5Field()
+    business_portfolio_ja = CKEditor5Field(blank=True, null=True)
+    business_portfolio_ne = CKEditor5Field(blank=True, null=True)
     office_address_en = CKEditor5Field()
-    office_address_ja = CKEditor5Field()
-    office_address_ne = CKEditor5Field()
-    office_tel = models.CharField(max_length=20, blank=True, null=True)
+    office_address_ja = CKEditor5Field(blank=True, null=True)
+    office_address_ne = CKEditor5Field(blank=True, null=True)
+    office_tel = models.CharField(max_length=20)
     office_fax = models.CharField(max_length=20, blank=True, null=True)
-    other_offices_en = models.TextField()
-    other_offices_ja = models.TextField()
-    other_offices_ne = models.TextField()
-    about_en = CKEditor5Field(blank=True, null=True)
+    license_details_en = CKEditor5Field()
+    license_details_ja = CKEditor5Field(blank=True, null=True)
+    license_details_ne = CKEditor5Field(blank=True, null=True)
+    about_en = CKEditor5Field()
     about_ja = CKEditor5Field(blank=True, null=True)
     about_ne = CKEditor5Field(blank=True, null=True)
-    mission_en = CKEditor5Field(blank=True, null=True)
+    mission_en = CKEditor5Field()
     mission_ja = CKEditor5Field(blank=True, null=True)
     mission_ne = CKEditor5Field(blank=True, null=True)
     
@@ -195,25 +189,20 @@ class CompanyInfo(BaseModel):
     def get_translated_representative(self):
         return self.get_translated_field('representative')
 
-    def get_translated_stock_listing(self):
-        return self.get_translated_field('stock_listing')
-    
     def get_translated_business_portfolio(self):
         return self.get_translated_field('business_portfolio')
 
     def get_translated_office_address(self):
         return self.get_translated_field('office_address')
 
-    def get_translated_other_offices(self):
-        return self.get_translated_field('other_offices')
+    def get_translated_license_details(self):
+        return self.get_translated_field('license_details')
+        
     def get_translated_about(self):
         return self.get_translated_field('about')
 
     def get_translated_mission(self):
         return self.get_translated_field('mission')
-    
-    def get_translated_total_equity(self):
-        return self.get_translated_field('total_equity')
 
 
 

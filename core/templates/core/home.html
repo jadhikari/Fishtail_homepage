@@ -97,7 +97,7 @@
                         <div class="col-12 news-box">
                             {% if recent_news %}
                                 {% for news in recent_news %}
-                                    <div class="news-item">
+                                    <div class="news-item" style="padding: 5px;">
                                         <div class="news-date">{{ news.created_at|date:"M d, Y" }}</div>
                                         <div class="news-text">
                                             <a href="{% url 'news_detail' news.unique_id %}">

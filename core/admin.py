@@ -36,7 +36,31 @@ class TeamMemberAdmin(BaseModelAdmin):
     search_fields = ('unique_id','name_en')
 
 @admin.register(CompanyInfo)
-class CompanyInfoAdmin(BaseModelAdmin):
-    list_display = ('unique_id','name_en','establishment_date', 'representative_en', 'stock_listing_en', 'office_tel','created_at')
-    # Exclude fields from the admin form
-    exclude = ("office_tel", "office_fax")
+class CompanyInfoAdmin(admin.ModelAdmin):
+    list_display = ('unique_id', 'name_en', 'establishment_date', 'representative_en', 'capital', 'office_tel', 'created_at')
+    search_fields = ('unique_id', 'name_en', 'name_ja', 'name_ne')
+    readonly_fields = ('unique_id', 'created_at', 'updated_at')
+    
+    fieldsets = (
+        ('Basic Information', {
+            'fields': ('name_en', 'name_ja', 'name_ne', 'establishment_date', 'representative_en', 'representative_ja', 'representative_ne')
+        }),
+        ('Company Details', {
+            'fields': ('capital', 'employees_num', 'business_portfolio_en', 'business_portfolio_ja', 'business_portfolio_ne')
+        }),
+        ('Contact Information', {
+            'fields': ('office_address_en', 'office_address_ja', 'office_address_ne', 'office_tel', 'office_fax', 'license_details_en', 'license_details_ja', 'license_details_ne')
+        }),
+        ('About & Mission', {
+            'fields': ('about_en', 'about_ja', 'about_ne', 'mission_en', 'mission_ja', 'mission_ne')
+        }),
+    )
+    
+    # Exclude the 'user' field so it's not visible in the form
+    exclude = ('user',)
+    
+    def save_model(self, request, obj, form, change):
+        # If this is a new object, set the user to the currently logged-in admin user.
+        if not change:
+            obj.user = request.user
+        super().save_model(request, obj, form, change)

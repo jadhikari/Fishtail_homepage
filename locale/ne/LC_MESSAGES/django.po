@@ -86,20 +86,20 @@ msgstr "स्थापना"
 msgid "Representatives"
 msgstr "प्रतिनिधिहरू"
 
-msgid "Total Stockholder's Equity"
-msgstr "कुल शेयरधारक इक्विटी"
+msgid "Capital"
+msgstr ""
 
-msgid "Stock Listing"
-msgstr "शेयर सूचीकरण"
+msgid "Number of Employees"
+msgstr "कर्मचारी संख्या "
 
-msgid "Number of Employees Consolidated"
-msgstr "कर्मचारी संख्या (समेकित)"
+msgid "Business Portfolio"
+msgstr ""
 
 msgid "Tokyo Office"
 msgstr "टोकियो कार्यालय"
 
-msgid "Other Offices"
-msgstr "अन्य कार्यालयहरू"
+msgid "License number"
+msgstr ""
 
 msgid "Reliable News"
 msgstr "विश्वसनीय समाचार"

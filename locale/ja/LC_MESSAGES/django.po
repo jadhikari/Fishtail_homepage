@@ -86,20 +86,20 @@ msgstr "設立"
 msgid "Representatives"
 msgstr "代表者"
 
-msgid "Total Stockholder's Equity"
-msgstr "総株主資本"
+msgid "Capital"
+msgstr "資本金"
 
-msgid "Stock Listing"
-msgstr "株式上場"
+msgid "Number of Employees"
+msgstr "従業員数"
 
-msgid "Number of Employees Consolidated"
-msgstr "従業員数（連結）"
+msgid "Business Portfolio"
+msgstr "事業内容"
 
 msgid "Tokyo Office"
 msgstr "東京オフィス"
 
-msgid "Other Offices"
-msgstr "その他のオフィス"
+msgid "License number"
+msgstr "免許番号"
 
 msgid "Reliable News"
 msgstr "信頼できるニュース"

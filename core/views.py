@@ -22,6 +22,9 @@ def about(request):
         company_info = None
     return render(request, "core/about.html", {"company_info": company_info})
 
+def services(request):
+    
+    return render(request, "core/services.html")
 
 def news_home(request):
     """Fetch the latest, trending, and all news for display."""

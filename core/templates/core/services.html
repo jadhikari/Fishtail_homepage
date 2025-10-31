@@ -1,0 +1,356 @@
+{% extends "base.html" %}
+{% load static i18n %}
+
+{% block title %}{% trans "Services" %} | Fishtail Homes{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'core/core.css' %}">
+    <style>
+        /* Services Page Specific Styles */
+        .services-hero {
+            background: linear-gradient(135deg, #acccee 0%, #afc3f1 100%);
+            padding: 40px 20px 60px;
+            text-align: center;
+            color: rgb(7, 7, 7);
+            margin-bottom: 0;
+        }
+
+        .services-hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .services-hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.95;
+            line-height: 1.8;
+        }
+
+        .services-intro {
+            background: #ffffff;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .services-intro p {
+            font-size: 1.1rem;
+            color: #5a6c7d;
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .services-grid {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            padding: 80px 20px;
+        }
+
+        .service-card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 40px 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid #e8ecef;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--fishtail-primary), var(--fishtail-secondary));
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(41, 152, 204, 0.15);
+            border-color: var(--fishtail-primary);
+        }
+
+        .service-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--fishtail-primary);
+            opacity: 0.15;
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            line-height: 1;
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--fishtail-primary), var(--fishtail-secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            margin-bottom: 25px;
+            transition: all 0.4s ease;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 10px 25px rgba(41, 152, 204, 0.3);
+        }
+
+        .service-card h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .service-card:hover h3 {
+            color: var(--fishtail-primary);
+        }
+
+        .service-card p {
+            font-size: 1rem;
+            color: #7f8c8d;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }
+
+        .service-card .btn {
+            background: linear-gradient(135deg, var(--fishtail-primary), var(--fishtail-secondary));
+            border: none;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            align-self: flex-start;
+        }
+
+        .service-card .btn:hover {
+            background: linear-gradient(135deg, var(--fishtail-secondary), var(--fishtail-primary));
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(41, 152, 204, 0.4);
+        }
+
+        .language-support-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--fishtail-accent), #fbbf24);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 15px;
+        }
+
+        .hostel-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .services-hero h1 {
+                font-size: 2rem;
+            }
+
+            .services-hero p {
+                font-size: 1rem;
+            }
+
+            .service-card {
+                padding: 30px 20px;
+            }
+
+            .service-card h3 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <!-- Services Hero Section -->
+    <section class="services-hero">
+        <div class="container">
+            <h1>{% trans "Our Services" %}</h1>
+            <p>
+                {% trans "We leverage our expertise in real estate and property management to provide comprehensive solutions, ensuring many foreigners can live in a safe and secure environment. We focus on building trust through personalized service, working towards achieving diversity in Japan through housing and business spaces." %}
+            </p>
+        </div>
+    </section>
+
+    <!-- Services Introduction -->
+    <section class="services-intro">
+        <div class="container">
+            <p>
+                {% trans "Our services are available in multiple languages including Nepali, English, and Hindi, ensuring seamless communication for our international clients. We also provide specialized support for hostel accommodations." %}
+            </p>
+            <div class="mt-4">
+                <span class="language-support-badge">
+                    <i class="bi bi-translate me-2"></i>{% trans "Multi-Language Support: Nepali, English, Hindi" %}
+                </span>
+                <span class="hostel-badge">
+                    <i class="bi bi-building me-2"></i>{% trans "Hostel Support Available" %}
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="services-grid">
+        <div class="container">
+            <div class="row">
+                <!-- Service 1: Real Estate Brokerage Services -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <span class="service-number">01</span>
+                        <div class="service-icon">
+                            <i class="bi bi-house-door"></i>
+                        </div>
+                        <h3>{% trans "Real Estate Brokerage Services" %}</h3>
+                        <p>
+                            {% trans "We provide nationwide property listings, all suitable for foreign tenants. We eliminate the hassle and burden for corporations and schools when searching for properties." %}
+                        </p>
+                        <a href="{% url 'contact' %}" class="btn">
+                            {% trans "Learn More" %} <i class="bi bi-arrow-right ms-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 2: Leasing Service -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <span class="service-number">02</span>
+                        <div class="service-icon">
+                            <i class="bi bi-key"></i>
+                        </div>
+                        <h3>{% trans "Leasing Service" %}</h3>
+                        <p>
+                            {% trans "This service responds to requests for individual contracts for foreign employees and students before their arrival in Japan. We also provide services for foreigners who have already arrived in Japan." %}
+                        </p>
+                        <a href="{% url 'contact' %}" class="btn">
+                            {% trans "Learn More" %} <i class="bi bi-arrow-right ms-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 3: New Life Startup Support -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <span class="service-number">03</span>
+                        <div class="service-icon">
+                            <i class="bi bi-rocket-takeoff"></i>
+                        </div>
+                        <h3>{% trans "New Life Startup Support" %}</h3>
+                        <p>
+                            {% trans "An all-in-one package service that includes administrative procedures and guidance upon arrival in Japan, covering the unexpectedly heavy burden of acceptance work." %}
+                        </p>
+                        <a href="{% url 'contact' %}" class="btn">
+                            {% trans "Learn More" %} <i class="bi bi-arrow-right ms-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 4: Living Support -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <span class="service-number">04</span>
+                        <div class="service-icon">
+                            <i class="bi bi-heart-pulse"></i>
+                        </div>
+                        <h3>{% trans "Living Support" %}</h3>
+                        <p>
+                            {% trans "Life support service that responds to 'troubles' during contract, departure, and residence. We handle a wide range of inquiries including complaint responses and equipment issues." %}
+                        </p>
+                        <a href="{% url 'contact' %}" class="btn">
+                            {% trans "Learn More" %} <i class="bi bi-arrow-right ms-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 5: Furniture and Appliance Support -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <span class="service-number">05</span>
+                        <div class="service-icon">
+                            <i class="bi bi-box-seam"></i>
+                        </div>
+                        <h3>{% trans "Furniture and Appliance Support" %}</h3>
+                        <p>
+                            {% trans "A popular service that significantly reduces administrative and financial burden for corporations and schools. We prepare everything from beds and washing machines to daily necessities at reasonable prices." %}
+                        </p>
+                        <a href="{% url 'contact' %}" class="btn">
+                            {% trans "Learn More" %} <i class="bi bi-arrow-right ms-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 6: Hostel Support -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <span class="service-number">06</span>
+                        <div class="service-icon">
+                            <i class="bi bi-building-check"></i>
+                        </div>
+                        <h3>{% trans "Hostel Support" %}</h3>
+                        <p>
+                            {% trans "Specialized support for hostel accommodations including dormitory proposals for international students, ensuring safe and comfortable living arrangements with multi-language support." %}
+                        </p>
+                        <span class="hostel-badge">
+                            <i class="bi bi-star-fill me-1"></i>{% trans "Specialized Service" %}
+                        </span>
+                        <a href="{% url 'contact' %}" class="btn mt-3">
+                            {% trans "Learn More" %} <i class="bi bi-arrow-right ms-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section style="background: linear-gradient(135deg, #acccee 0%, #afc3f1 100%); 
+                    padding: 60px 20px; 
+                    color: rgb(7, 7, 7); 
+                    text-align: center;
+                    margin: 10px;
+                    border-radius: 30px;
+                    box-shadow: 0 -5px 20px rgba(97, 84, 235, 0.05);">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 20px;">{% trans "Ready to Get Started?" %}</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 30px; opacity: 0.95;">
+                {% trans "Contact us today to discuss your needs and discover how we can help you with our comprehensive services." %}
+            </p>
+            <a href="{% url 'contact' %}" class="btn btn-lg" style="background: var(--fishtail-accent); color: white; padding: 15px 40px; border-radius: 30px; font-weight: 600; transition: all 0.3s ease;">
+                {% trans "Contact Us" %} <i class="bi bi-arrow-right ms-2"></i>
+            </a>
+        </div>
+    </section>
+{% endblock %}

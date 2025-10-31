@@ -51,17 +51,12 @@
                             <td>{{ company_info.get_translated_representative }}</td>
                         </tr>
                         <tr>
-                            <th scope="row">{% trans "Total Stockholder's Equity" %}</th>
-                            <td>{{ company_info.get_translated_total_equity }}</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">{% trans "Stock Listing" %}</th>
-                            <td>{{ company_info.get_translated_stock_listing }}</td>
+                            <th scope="row">{% trans "Capital" %}</th>
+                            <td>{{ company_info.capital }}</td>
                         </tr>
                         <tr>
                             <th scope="row">{% trans "Number of Employees" %}</th>
-                            <td>{% trans "Consolidated" %}: {{ company_info.employees_consolidated }} | 
-                                {% trans "Non-Consolidated" %}: {{ company_info.employees_non_consolidated }}</td>
+                            <td>{{ company_info.employees_num }}</td>
                         </tr>
                         <tr>
                             <th scope="row">{% trans "Business Portfolio" %}</th>
@@ -74,8 +69,8 @@
                             </td>
                         </tr>
                         <tr>
-                            <th scope="row">{% trans "Other Offices" %}</th>
-                            <td>{{ company_info.get_translated_other_offices }}</td>
+                            <th scope="row">{% trans "License number" %}</th>
+                            <td>{{ company_info.get_translated_license_details | safe }}</td>
                         </tr>
                     </tbody>
                 </table>
