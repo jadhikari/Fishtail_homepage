@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% load static i18n %}
+
+{% block title %}{% trans "Frequently Asked Questions" %} | Fishtail Homes{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'core/core.css' %}">
+{% endblock %}
+
+{% block content %}
+    <!-- Hero Section -->
+    <section class="py-3 bg-light border-bottom" style="background: linear-gradient(to bottom, #f8fafc 0%, #ffffff 100%);">
+        <div class="container">
+            <div class="position-relative">
+                <div class="position-absolute top-0 start-0" style="width: 120px; height: 3px; background: var(--fishtail-primary, #2998cc);"></div>
+                <div style="padding-top: 2px;">
+                    <h1 class="display-5 fw-semibold text-dark mb-4" style="letter-spacing: -0.02em; position: relative;">
+                        {% trans "Frequently Asked Questions" %}
+                        <span class="position-absolute bottom-0 d-block" style="left: 0; width: 60px; height: 3px; background: var(--fishtail-primary, #2998cc); border-radius: 2px; transform: translateY(12px);"></span>
+                    </h1>
+                    <p class="text-muted fw-light mb-0" style="max-width: 900px; line-height: 1.7; font-size: 1rem;">
+                        {% trans "Find answers to commonly asked questions about our services, hostels, and general information." %}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% if faqs %}
+    <!-- FAQ Section -->
+    <section class="py-4 py-md-5" style="background: linear-gradient(135deg, #f8fafc 0%, #edf2f7 100%);">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-9">
+                    <div class="accordion accordion-flush" id="faqAccordion">
+                        {% for faq in faqs %}
+                        <div class="accordion-item border rounded-3 mb-2 shadow-sm">
+                            <h2 class="accordion-header" id="faqHeading{{ forloop.counter }}">
+                                <button class="accordion-button collapsed py-3 py-md-2 fw-semibold fs-6" type="button"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#faqCollapse{{ forloop.counter }}"
+                                        aria-expanded="false"
+                                        aria-controls="faqCollapse{{ forloop.counter }}">
+                                    {{ faq.get_translated_question }}
+                                </button>
+                            </h2>
+                            <div id="faqCollapse{{ forloop.counter }}" class="accordion-collapse collapse"
+                                 aria-labelledby="faqHeading{{ forloop.counter }}" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body small text-muted">
+                                    {{ faq.get_translated_answer | safe }}
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% else %}
+    <!-- No FAQs Available -->
+    <section class="py-4 py-md-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6">
+                    <div class="card border border-2 text-center p-4 p-md-5 shadow-sm" style="border-style: dashed;">
+                        <div class="card-body">
+                            <i class="bi bi-question-circle text-muted" style="font-size: 2.5rem;"></i>
+                            <h3 class="h6 fw-semibold text-muted mt-3 mb-2">{% trans "No FAQs Available" %}</h3>
+                            <p class="text-muted small mb-0">{% trans "We are currently updating our FAQ section. Please check back later." %}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endif %}
+{% endblock %}
+

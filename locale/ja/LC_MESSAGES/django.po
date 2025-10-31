@@ -47,9 +47,6 @@ msgstr "会社"
 msgid "Further Information"
 msgstr "詳しい情報"
 
-msgid "Terms & Conditions"
-msgstr "利用規約"
-
 msgid "Privacy Policy"
 msgstr "プライバシーポリシー"
 
@@ -70,6 +67,9 @@ msgstr "メールアドレスを入力してください"
 
 msgid "Your Gateway to Homes and Hostels"
 msgstr "理想のホステルや家を見つけよう"
+
+msgid "Hostel"
+msgstr "ホステル"
 
 msgid "Browse verified real estate and hostel listings to find your perfect stay or investment."
 msgstr "信頼できる提供者からのホステル、アパート、物件をすべて1つの便利なプラットフォームで探せます。"
@@ -398,9 +398,6 @@ msgstr "お問い合わせください。ご質問やご要望にお答えする
 msgid "Business Hours"
 msgstr "営業時間"
 
-msgid "Monday - Friday"
-msgstr "月曜日 - 金曜日"
-
 msgid "Hostel Accommodation"
 msgstr "ホステル宿泊施設"
 
@@ -469,3 +466,33 @@ msgstr "申し訳ございません。メッセージの送信中にエラーが
 
 msgid "Thank you for contacting Fishtail Homes"
 msgstr "Fishtail Homesにお問い合わせいただきありがとうございます"
+
+msgid "Frequently Asked Questions"
+msgstr "よくある質問"
+
+msgid "Find answers to commonly asked questions about our services, hostels, and general information."
+msgstr "私たちのサービス、ホステル、一般的な情報に関するよくある質問の回答を見つけてください。"
+
+msgid "No FAQs Available"
+msgstr "よくある質問は利用できません"
+
+msgid "We are currently updating our FAQ section. Please check back later."
+msgstr "よくある質問セクションを更新中です。後ほど再度ご確認ください。"
+
+msgid "Terms & Conditions"
+msgstr "利用規約"
+
+msgid "Please read our terms and conditions carefully before using our services."
+msgstr "サービスをご利用になる前に、利用規約をよくお読みください。"
+
+msgid "Terms & Conditions Not Available"
+msgstr "利用規約は利用できません"
+
+msgid "We are currently updating our terms and conditions. Please check back later."
+msgstr "利用規約を更新中です。後ほど再度ご確認ください。"
+
+msgid "Last updated"
+msgstr "最終更新"
+
+msgid "Get the latest updates and real estate news directly to your inbox."
+msgstr "最新の更新情報と不動産ニュースをあなたの受信箱に直接お届けします。"

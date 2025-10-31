@@ -8,7 +8,7 @@ from django.utils.translation import get_language, gettext as _
 
 
 def home(request):
-    # Fetch recent news items (latest 7) for the home page
+    # Fetch recent news items (latest 5) for the home page
     recent_news = models.News.objects.exclude(unique_id="").order_by('-created_at')[:5]
     context = {
         'recent_news': recent_news
@@ -161,5 +161,18 @@ def hostel_booking(request, unique_id):
         return redirect('hostel')
     
     return render(request, 'core/hostel.html', {'hostels': models.Hostel.objects.filter(is_active=True)})
+
+def faq_view(request):
+    """Display all active FAQs"""
+    faqs = models.FAQ.objects.filter(is_active=True).order_by('order', 'created_at')
+    return render(request, 'core/faq.html', {'faqs': faqs})
+
+def terms_view(request):
+    """Display Terms & Conditions"""
+    try:
+        terms = models.TermsAndConditions.objects.get()
+    except models.TermsAndConditions.DoesNotExist:
+        terms = None
+    return render(request, 'core/terms.html', {'terms': terms})
 
 

@@ -67,24 +67,6 @@ class News(BaseModel):
     def __str__(self):
         return self.get_translated_header()
     
-class Blog(BaseModel):
-    image = models.ImageField(upload_to='blog_images/', blank=True, null=True)
-    header_ja = models.CharField(max_length=255)
-    header_en = models.CharField(max_length=255, blank=True, null=True)
-    header_ne = models.CharField(max_length=255, blank=True, null=True)
-    content_ja = CKEditor5Field()
-    content_en = CKEditor5Field(blank=True, null=True)
-    content_ne = CKEditor5Field(blank=True, null=True)
-
-    def get_translated_header(self):
-        return self.get_translated_field('header')
-    
-    def get_translated_content(self):
-        return self.get_translated_field('content')
-
-    def __str__(self):
-        return self.get_translated_header()
-
 class Video(BaseModel):
     header_ja = models.CharField(max_length=255)
     header_en = models.CharField(max_length=255, blank=True, null=True)
@@ -197,6 +179,9 @@ class CompanyInfo(BaseModel):
     about_en = CKEditor5Field()
     about_ja = CKEditor5Field(blank=True, null=True)
     about_ne = CKEditor5Field(blank=True, null=True)
+    business_hours_en = CKEditor5Field()
+    business_hours_ja = CKEditor5Field(blank=True, null=True)
+    business_hours_ne = CKEditor5Field(blank=True, null=True)
     mission_en = CKEditor5Field()
     mission_ja = CKEditor5Field(blank=True, null=True)
     mission_ne = CKEditor5Field(blank=True, null=True)
@@ -206,6 +191,7 @@ class CompanyInfo(BaseModel):
     values_en = CKEditor5Field()
     values_ja = CKEditor5Field(blank=True, null=True)
     values_ne = CKEditor5Field(blank=True, null=True)
+    
     
     
     def save(self, *args, **kwargs):
@@ -230,6 +216,9 @@ class CompanyInfo(BaseModel):
         
     def get_translated_about(self):
         return self.get_translated_field('about')
+    
+    def get_translated_business_hours(self):
+        return self.get_translated_field('business_hours')
 
     def get_translated_mission(self):
         return self.get_translated_field('mission')
@@ -341,3 +330,63 @@ class ContactMessage(models.Model):
     
     class Meta:
         ordering = ['-created_at']
+
+class FAQ(BaseModel):
+    question_en = models.CharField(max_length=500)
+    question_ja = models.CharField(max_length=500, blank=True, null=True)
+    question_ne = models.CharField(max_length=500, blank=True, null=True)
+    answer_en = CKEditor5Field()
+    answer_ja = CKEditor5Field(blank=True, null=True)
+    answer_ne = CKEditor5Field(blank=True, null=True)
+    order = models.PositiveIntegerField(default=0, help_text="Display order (lower number appears first)")
+    is_active = models.BooleanField(default=True)
+    
+    def get_translated_question(self):
+        return self.get_translated_field('question')
+    
+    def get_translated_answer(self):
+        return self.get_translated_field('answer')
+    
+    def __str__(self):
+        return self.get_translated_question()
+    
+    class Meta:
+        ordering = ['order', 'created_at']
+        verbose_name = 'FAQ'
+        verbose_name_plural = 'FAQs'
+
+class TermsAndConditions(models.Model):
+    """Single instance model for Terms & Conditions"""
+    unique_id = models.CharField(max_length=6, unique=True, blank=True, editable=False, default='TC001')
+    content_en = CKEditor5Field()
+    content_ja = CKEditor5Field(blank=True, null=True)
+    content_ne = CKEditor5Field(blank=True, null=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    
+    def get_translated_content(self):
+        lang = get_language()
+        field_name = f"content_{lang}"
+        if hasattr(self, field_name):
+            value = getattr(self, field_name)
+            if value:
+                return value
+        if self.content_en:
+            return self.content_en
+        return self.content_ja
+    
+    def save(self, *args, **kwargs):
+        if not self.unique_id:
+            self.unique_id = 'TC001'
+        # Only allow one instance
+        if not self.pk:
+            if TermsAndConditions.objects.exists():
+                raise ValidationError("Only one instance of Terms and Conditions is allowed.")
+        super().save(*args, **kwargs)
+    
+    def __str__(self):
+        return "Terms and Conditions"
+    
+    class Meta:
+        verbose_name = 'Terms and Conditions'
+        verbose_name_plural = 'Terms and Conditions'

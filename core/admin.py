@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import News, Blog, Video, Job, TeamMember, CompanyInfo, Service, Hostel, BookingRequest, ContactMessage
+from .models import News, Video, Job, TeamMember, CompanyInfo, Service, Hostel, BookingRequest, ContactMessage, FAQ, TermsAndConditions
 
 class BaseModelAdmin(admin.ModelAdmin):
     list_display = ('unique_id','header_ja', 'header_en', 'created_at', 'user')
@@ -18,10 +18,6 @@ class BaseModelAdmin(admin.ModelAdmin):
 class NewsAdmin(BaseModelAdmin):
     pass  
 
-@admin.register(Blog)
-class BlogAdmin(BaseModelAdmin):  
-    pass
-    
 @admin.register(Video)
 class VideoAdmin(BaseModelAdmin):
     pass
@@ -72,7 +68,7 @@ class CompanyInfoAdmin(admin.ModelAdmin):
     
     fieldsets = (
         ('Basic Information', {
-            'fields': ('name_en', 'name_ja', 'name_ne', 'establishment_date', 'representative_en', 'representative_ja', 'representative_ne')
+            'fields': ('name_en', 'name_ja', 'name_ne', 'establishment_date', 'representative_en', 'representative_ja', 'representative_ne','business_hours_en', 'business_hours_ja', 'business_hours_ne')
         }),
         ('Company Details', {
             'fields': ('capital', 'employees_num', 'business_portfolio_en', 'business_portfolio_ja', 'business_portfolio_ne')
@@ -158,5 +154,43 @@ class ContactMessageAdmin(admin.ModelAdmin):
         }),
         ('Message', {
             'fields': ('message',)
+        }),
+    )
+
+@admin.register(FAQ)
+class FAQAdmin(admin.ModelAdmin):
+    list_display = ('unique_id', 'question_en', 'order', 'is_active', 'created_at')
+    search_fields = ('unique_id', 'question_en', 'question_ja', 'question_ne')
+    readonly_fields = ('unique_id', 'created_at', 'updated_at')
+    list_filter = ('is_active', 'created_at')
+    list_editable = ('order', 'is_active')
+    
+    fieldsets = (
+        ('Question', {
+            'fields': ('question_en', 'question_ja', 'question_ne')
+        }),
+        ('Answer', {
+            'fields': ('answer_en', 'answer_ja', 'answer_ne')
+        }),
+        ('Settings', {
+            'fields': ('order', 'is_active')
+        }),
+    )
+    
+    exclude = ('user',)
+    
+    def save_model(self, request, obj, form, change):
+        if not change:
+            obj.user = request.user
+        super().save_model(request, obj, form, change)
+
+@admin.register(TermsAndConditions)
+class TermsAndConditionsAdmin(admin.ModelAdmin):
+    list_display = ('unique_id', 'updated_at', 'created_at')
+    readonly_fields = ('unique_id', 'created_at', 'updated_at')
+    
+    fieldsets = (
+        ('Terms and Conditions Content', {
+            'fields': ('content_en', 'content_ja', 'content_ne')
         }),
     )

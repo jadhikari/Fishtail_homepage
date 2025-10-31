@@ -1,13 +1,12 @@
 # Fishtail - Job Portal & News Management System
 
-A comprehensive Django-based web application for managing job postings, news articles, blogs, and team information with multi-language support and rich text editing capabilities.
+A comprehensive Django-based web application for managing job postings, news articles, and team information with multi-language support and rich text editing capabilities.
 
 ## 🚀 Features
 
 ### Core Functionality
 - **Job Portal Management**: Create, edit, and manage job postings with detailed descriptions
 - **News Management**: Publish and manage news articles with image support
-- **Blog System**: Content management for blog posts
 - **Team Management**: Manage team member profiles with social media links
 - **Company Information**: Comprehensive company profile management
 - **Video Management**: Organize and manage video content
@@ -16,7 +15,7 @@ A comprehensive Django-based web application for managing job postings, news art
 - **Multi-language Support**: English, Japanese, and Nepali language support
 - **Rich Text Editing**: Advanced text editor powered by CKEditor 5
 - **User Management**: Custom user model with authentication
-- **Image Upload**: Support for image uploads in news, blogs, and team profiles
+- **Image Upload**: Support for image uploads in news and team profiles
 - **Responsive Design**: Mobile-friendly interface
 - **Unique ID System**: Automatic generation of unique 6-character alphanumeric IDs
 - **Translation System**: Built-in internationalization (i18n) support
@@ -92,7 +91,7 @@ Fishtail/
 │   ├── views.py             # User views
 │   └── admin.py             # User admin interface
 ├── core/                     # Main application
-│   ├── models.py            # Core models (News, Blog, Job, etc.)
+│   ├── models.py            # Core models (News, Job, etc.)
 │   ├── views.py             # Core views
 │   ├── urls.py              # Core URL patterns
 │   ├── admin.py             # Admin interface
@@ -121,12 +120,6 @@ Fishtail/
 - Multi-language support
 - Attraction points and detailed descriptions
 - Rich text content editing
-
-### Blog Model
-- Blog post management
-- Multi-language headers and content
-- Image support
-- Rich text editing capabilities
 
 ### Team Member Model
 - Team member profiles

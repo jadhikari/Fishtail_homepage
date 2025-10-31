@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% load static i18n %}
+
+{% block title %}{% trans "Terms & Conditions" %} | Fishtail Homes{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'core/core.css' %}">
+{% endblock %}
+
+{% block content %}
+    <!-- Hero Section -->
+    <section class="py-3 bg-light border-bottom" style="background: linear-gradient(to bottom, #f8fafc 0%, #ffffff 100%);">
+        <div class="container">
+            <div class="position-relative">
+                <div class="position-absolute top-0 start-0" style="width: 120px; height: 3px; background: var(--fishtail-primary, #2998cc);"></div>
+                <div style="padding-top: 2px;">
+                    <h1 class="display-5 fw-semibold text-dark mb-4" style="letter-spacing: -0.02em; position: relative;">
+                        {% trans "Terms & Conditions" %}
+                        <span class="position-absolute bottom-0 d-block" style="left: 0; width: 60px; height: 3px; background: var(--fishtail-primary, #2998cc); border-radius: 2px; transform: translateY(12px);"></span>
+                    </h1>
+                    <p class="text-muted fw-light mb-0" style="max-width: 900px; line-height: 1.7; font-size: 1rem;">
+                        {% trans "Please read our terms and conditions carefully before using our services." %}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% if terms %}
+    <!-- Terms & Conditions Content -->
+    <section class="py-5" style="background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="card border-2 rounded-3 shadow-lg">
+                        <div class="card-body p-4 p-md-5">
+                            <div class="terms-content">
+                                {{ terms.get_translated_content | safe }}
+                            </div>
+                            {% if terms.updated_at %}
+                            <div class="mt-4 pt-3 border-top text-muted small">
+                                <i class="bi bi-clock-history me-2"></i>
+                                {% trans "Last updated" %}: {{ terms.updated_at|date:"F d, Y" }}
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% else %}
+    <!-- No Terms Available -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="text-center border border-2 border-dashed rounded-3 p-5 bg-white">
+                        <i class="bi bi-file-text text-muted" style="font-size: 3rem;"></i>
+                        <h3 class="h5 text-muted mt-3 mb-2">{% trans "Terms & Conditions Not Available" %}</h3>
+                        <p class="text-muted mb-0">{% trans "We are currently updating our terms and conditions. Please check back later." %}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endif %}
+{% endblock %}
+

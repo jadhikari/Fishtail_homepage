@@ -13,4 +13,6 @@ urlpatterns = [
     path('career/<str:unique_id>/', views.job_detail_view, name='career'),
     path('hostel/', views.hostel_view, name='hostel'),
     path('hostel/booking/<str:unique_id>/', views.hostel_booking, name='hostel_booking'),
+    path('faq/', views.faq_view, name='faq'),
+    path('terms/', views.terms_view, name='terms'),
 ]

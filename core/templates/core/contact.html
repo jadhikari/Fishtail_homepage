@@ -101,8 +101,7 @@
                             </div>
                             <h5 class="fw-semibold mb-3">{% trans "Business Hours" %}</h5>
                             <p class="text-muted mb-0">
-                                {% trans "Monday - Friday" %}<br>
-                                9:00 AM - 6:00 PM
+                                {{ company_info.get_translated_business_hours | safe }}
                             </p>
                         </div>
                     </div>
