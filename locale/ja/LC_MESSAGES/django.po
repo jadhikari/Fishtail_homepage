@@ -391,3 +391,12 @@ msgstr "CEOからのメッセージ"
 
 msgid "Our Team Members"
 msgstr "チームメンバー"
+
+msgid "Get in touch with us. We're here to help you with your questions and assist you with your needs."
+msgstr "お問い合わせください。ご質問やご要望にお答えする準備ができています。"
+
+msgid "Business Hours"
+msgstr "営業時間"
+
+msgid "Monday - Friday"
+msgstr "月曜日 - 金曜日"

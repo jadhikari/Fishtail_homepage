@@ -73,7 +73,11 @@ def team_view(request):
     return render(request, "core/team.html", {"ceo": ceo, "team_members": team_members})
 
 def contact(request):
-    return render(request, 'core/contact.html')
+    try:
+        company_info = models.CompanyInfo.objects.get()
+    except models.CompanyInfo.DoesNotExist:
+        company_info = None
+    return render(request, 'core/contact.html', {'company_info': company_info})
 
 def job_list_view(request):
     query = request.GET.get('q', '')

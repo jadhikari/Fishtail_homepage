@@ -1,75 +1,229 @@
 {% extends "base.html" %}
-{% load i18n %}
+{% load static i18n %}
+
+{% block title %}{% trans "Contact Us" %} | Fishtail Homes{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'core/core.css' %}">
+    <style>
+        .contact-info-card {
+            transition: all 0.3s ease;
+        }
+        .contact-info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(41, 152, 204, 0.15) !important;
+            border-color: var(--fishtail-primary, #2998cc) !important;
+        }
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--fishtail-primary, #2998cc) 0%, var(--fishtail-secondary, #1e3a8a) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .contact-icon i {
+            color: white;
+            font-size: 1.5rem;
+        }
+    </style>
+{% endblock %}
 
 {% block content %}
-<div class="container my-5">
-    <div class="row">
-        <div class="col-lg-5">
-            <h1 class="display-4 fw-bold">{% trans "Contact Us" %}</h1>
-            <p class="lead">
-                {% trans "Whether you are looking for job opportunities or business partnerships, our team is ready to assist you. Get in touch with us today." %}
-            </p>
-
-            <h3 class="mt-4">{% trans "Our Office" %}</h3>
-            <ul class="list-unstyled">
-                <li><i class="bi bi-geo-alt-fill text-primary"></i> <strong>{% trans "Address" %}:</strong> Shinjuku I-land Tower, 6-5-1 Nishi-Shinjuku, Tokyo, Japan</li>
-                <li><i class="bi bi-telephone-fill text-success"></i> <strong>{% trans "Phone" %}:</strong> +81 3 3342 4506</li>
-                <li><i class="bi bi-envelope-fill text-danger"></i> <strong>{% trans "Email" %}:</strong> contact@enjapan.jp</li>
-                <li><i class="bi bi-globe text-info"></i> <strong>{% trans "Website" %}:</strong> <a href="#" target="_blank">www.enjapan.jp</a></li>
-            </ul>
-        </div>
-
-        <!-- Contact Form -->
-        <div class="col-lg-7">
-            <div class="card shadow-lg">
-                <div class="card-body">
-                    <h3 class="card-title text-center">{% trans "Send Us a Message" %}</h3>
-                    <form method="post">
-                        {% csrf_token %}
-                        <div class="mb-3">
-                            <label for="name" class="form-label">{% trans "Your Name" %}</label>
-                            <input type="text" class="form-control" id="name" name="name" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">{% trans "Your Email" %}</label>
-                            <input type="email" class="form-control" id="email" name="email" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="phone" class="form-label">{% trans "Phone Number" %}</label>
-                            <input type="text" class="form-control" id="phone" name="phone" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="address" class="form-label">{% trans "Your Address" %}</label>
-                            <input type="text" class="form-control" id="address" name="address" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="purpose" class="form-label">{% trans "Purpose of Contact" %}</label>
-                            <select class="form-select" id="purpose" name="purpose" required>
-                                <option value="">{% trans "Select Purpose" %}</option>
-                                <option value="Job Inquiry">{% trans "Looking for a Job" %}</option>
-                                <option value="Business Inquiry">{% trans "Business Partnership" %}</option>
-                                <option value="General Inquiry">{% trans "General Inquiry" %}</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="message" class="form-label">{% trans "Your Message" %}</label>
-                            <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary w-100">{% trans "Send Message" %}</button>
-                    </form>
+    <!-- Hero Section -->
+    <section class="py-3 bg-light border-bottom" style="background: linear-gradient(to bottom, #f8fafc 0%, #ffffff 100%);">
+        <div class="container">
+            <div class="position-relative">
+                <div class="position-absolute top-0 start-0" style="width: 120px; height: 3px; background: var(--fishtail-primary, #2998cc);"></div>
+                <div style="padding-top: 2px;">
+                    <h1 class="display-5 fw-semibold text-dark mb-4" style="letter-spacing: -0.02em; position: relative;">
+                        {% trans "Contact Us" %}
+                        <span class="position-absolute bottom-0 d-block" style="left: 0; width: 60px; height: 3px; background: var(--fishtail-primary, #2998cc); border-radius: 2px; transform: translateY(12px);"></span>
+                    </h1>
+                    <p class="text-muted fw-light mb-0" style="max-width: 900px; line-height: 1.7; font-size: 1rem;">
+                        {% trans "Get in touch with us. We're here to help you with your questions and assist you with your needs." %}
+                    </p>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Google Map Section -->
-    <div class="row mt-5">
-        <div class="col">
-            <h3 class="text-center">{% trans "Our Location" %}</h3>
-            <div class="ratio ratio-16x9">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31455.01201984136!2d139.68859769897438!3d35.70158714513696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188d2059b7fd4b%3A0xec61c68fe232efd2!2sShinjuku%20City%2C%20Tokyo%2C%20Japan!5e1!3m2!1sen!2sus!4v1741616754050!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    {% if company_info %}
+    <!-- Contact Information Cards -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="card contact-info-card h-100 border-2 rounded-3 shadow-lg">
+                        <div class="card-body text-center p-4">
+                            <div class="contact-icon mx-auto mb-3">
+                                <i class="bi bi-geo-alt-fill"></i>
+                            </div>
+                            <h5 class="fw-semibold mb-3">{% trans "Address" %}</h5>
+                            <p class="text-muted mb-0">
+                                {{ company_info.get_translated_office_address | safe }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mb-4">
+                    <div class="card contact-info-card h-100 border-2 rounded-3 shadow-lg">
+                        <div class="card-body text-center p-4">
+                            <div class="contact-icon mx-auto mb-3">
+                                <i class="bi bi-telephone-fill"></i>
+                            </div>
+                            <h5 class="fw-semibold mb-3">{% trans "Phone Number" %}</h5>
+                            <p class="text-muted mb-2">
+                                <a href="tel:{{ company_info.office_tel }}" class="text-decoration-none">
+                                    {{ company_info.office_tel }}
+                                </a>
+                            </p>
+                            {% if company_info.office_fax %}
+                            <p class="text-muted mb-0 small">
+                                {% trans "Fax Number" %}: {{ company_info.office_fax }}
+                            </p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mb-4">
+                    <div class="card contact-info-card h-100 border-2 rounded-3 shadow-lg">
+                        <div class="card-body text-center p-4">
+                            <div class="contact-icon mx-auto mb-3">
+                                <i class="bi bi-clock-fill"></i>
+                            </div>
+                            <h5 class="fw-semibold mb-3">{% trans "Business Hours" %}</h5>
+                            <p class="text-muted mb-0">
+                                {% trans "Monday - Friday" %}<br>
+                                9:00 AM - 6:00 PM
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
+    </section>
+    {% endif %}
+
+    <!-- Contact Form and Map Section -->
+    {% if company_info %}
+    <section class="py-5" style="background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);">
+        <div class="container">
+            <div class="row">
+                <!-- Contact Form on Left -->
+                <div class="col-lg-7 mb-4 mb-lg-0">
+                    <div class="card border-2 rounded-3 shadow-lg h-100">
+                        <div class="card-body p-4 p-md-5">
+                            <h3 class="h4 fw-semibold mb-4">
+                                {% trans "Send Us a Message" %}
+                            </h3>
+                            <form method="post">
+                                {% csrf_token %}
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="name" class="form-label fw-semibold">{% trans "Your Name" %}</label>
+                                        <input type="text" class="form-control" id="name" name="name" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="email" class="form-label fw-semibold">{% trans "Your Email" %}</label>
+                                        <input type="email" class="form-control" id="email" name="email" required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="phone" class="form-label fw-semibold">{% trans "Phone Number" %}</label>
+                                        <input type="text" class="form-control" id="phone" name="phone" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="purpose" class="form-label fw-semibold">{% trans "Purpose of Contact" %}</label>
+                                        <select class="form-select" id="purpose" name="purpose" required>
+                                            <option value="">{% trans "Select Purpose" %}</option>
+                                            <option value="Job Inquiry">{% trans "Looking for a Job" %}</option>
+                                            <option value="Business Inquiry">{% trans "Business Partnership" %}</option>
+                                            <option value="General Inquiry">{% trans "General Inquiry" %}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message" class="form-label fw-semibold">{% trans "Your Message" %}</label>
+                                    <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                                </div>
+                                <button type="submit" class="btn w-100 py-2 fw-semibold" style="background: linear-gradient(135deg, var(--fishtail-primary, #2998cc), var(--fishtail-secondary, #1e3a8a)); color: white; border-radius: 8px;">
+                                    {% trans "Send Message" %} <i class="bi bi-send ms-2"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Map on Right -->
+                <div class="col-lg-5">
+                    <div class="card border-2 rounded-3 shadow-lg h-100">
+                        <div class="card-body p-0">
+                            <div class="ratio ratio-16x9 h-100">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31455.01201984136!2d139.68859769897438!3d35.70158714513696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188d2059b7fd4b%3A0xec61c68fe232efd2!2sShinjuku%20City%2C%20Tokyo%2C%20Japan!5e1!3m2!1sen!2sus!4v1741616754050!5m2!1sen!2sus" 
+                                        style="border:0; border-radius: 12px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% else %}
+    <!-- Contact Form Only (No Company Info) -->
+    <section class="py-5" style="background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card border-2 rounded-3 shadow-lg">
+                        <div class="card-body p-4 p-md-5">
+                            <h3 class="h4 fw-semibold mb-4 text-center">
+                                {% trans "Send Us a Message" %}
+                            </h3>
+                            <form method="post">
+                                {% csrf_token %}
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="name" class="form-label fw-semibold">{% trans "Your Name" %}</label>
+                                        <input type="text" class="form-control" id="name" name="name" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="email" class="form-label fw-semibold">{% trans "Your Email" %}</label>
+                                        <input type="email" class="form-control" id="email" name="email" required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="phone" class="form-label fw-semibold">{% trans "Phone Number" %}</label>
+                                        <input type="text" class="form-control" id="phone" name="phone" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="purpose" class="form-label fw-semibold">{% trans "Purpose of Contact" %}</label>
+                                        <select class="form-select" id="purpose" name="purpose" required>
+                                            <option value="">{% trans "Select Purpose" %}</option>
+                                            <option value="Job Inquiry">{% trans "Looking for a Job" %}</option>
+                                            <option value="Business Inquiry">{% trans "Business Partnership" %}</option>
+                                            <option value="General Inquiry">{% trans "General Inquiry" %}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message" class="form-label fw-semibold">{% trans "Your Message" %}</label>
+                                    <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                                </div>
+                                <button type="submit" class="btn w-100 py-2 fw-semibold" style="background: linear-gradient(135deg, var(--fishtail-primary, #2998cc), var(--fishtail-secondary, #1e3a8a)); color: white; border-radius: 8px;">
+                                    {% trans "Send Message" %} <i class="bi bi-send ms-2"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endif %}
 {% endblock %}

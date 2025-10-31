@@ -391,3 +391,12 @@ msgstr "हाम्रा मुख्य कार्यकारी अधि
 
 msgid "Our Team Members"
 msgstr "हाम्रा टीम सदस्यहरू"
+
+msgid "Get in touch with us. We're here to help you with your questions and assist you with your needs."
+msgstr "हामीले सम्पर्क गर्नुहोस्। हामी तपाईंका प्रश्नहरूमा मद्दत गर्न र तपाईंको आवश्यकताहरूमा सहायता गर्न तयार छौं।"
+
+msgid "Business Hours"
+msgstr "व्यावसायिक समय"
+
+msgid "Monday - Friday"
+msgstr "सोमबार - शुक्रबार"
