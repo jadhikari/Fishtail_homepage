@@ -32,8 +32,10 @@ class JobAdmin(BaseModelAdmin):
 
 @admin.register(TeamMember)
 class TeamMemberAdmin(BaseModelAdmin):
-    list_display = ('unique_id','name_en', 'name_ja', 'position_en', 'position_ja','created_at')
+    list_display = ('unique_id','name_en', 'name_ja', 'position_en', 'position_ja', 'is_ceo', 'created_at')
     search_fields = ('unique_id','name_en')
+    list_filter = ('is_ceo',)
+    list_editable = ('is_ceo',)
 
 @admin.register(Service)
 class ServiceAdmin(admin.ModelAdmin):

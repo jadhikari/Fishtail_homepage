@@ -136,6 +136,7 @@ class TeamMember(BaseModel):
     blog_ja = CKEditor5Field(blank=True, null=True)
     blog_en = CKEditor5Field(blank=True, null=True)
     blog_ne = CKEditor5Field(blank=True, null=True)
+    is_ceo = models.BooleanField(default=False, help_text="Mark this member as CEO")
 
     def get_translated_name(self):
         return self.get_translated_field('name')

@@ -61,8 +61,16 @@ def news_detail(request, unique_id):
 
 def team_view(request):
     """View to display all team members."""
-    team_members = models.TeamMember.objects.all()
-    return render(request, "core/team.html", {"team_members": team_members})
+    # Get CEO member
+    ceo = models.TeamMember.objects.filter(is_ceo=True).first()
+    
+    # Get other team members (exclude CEO if found)
+    if ceo:
+        team_members = models.TeamMember.objects.exclude(unique_id=ceo.unique_id).order_by('created_at')
+    else:
+        team_members = models.TeamMember.objects.all().order_by('created_at')
+    
+    return render(request, "core/team.html", {"ceo": ceo, "team_members": team_members})
 
 def contact(request):
     return render(request, 'core/contact.html')

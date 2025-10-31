@@ -203,12 +203,6 @@ msgstr "私たちのチーム"
 msgid "Meet Our Team Members"
 msgstr "チームメンバーの紹介"
 
-msgid "Our team of highly skilled professionals brings years of experience across various industries, ensuring top-notch support tailored to your unique needs."
-msgstr "当社の優秀な専門家チームは、さまざまな業界での豊富な経験を活かし、お客様のニーズに合わせた最高のサポートを提供します。"
-
-msgid "Request a Consultation"
-msgstr "ご相談はこちら"
-
 msgid "Our Amazing Team"
 msgstr "素晴らしいチーム"
 
@@ -382,3 +376,18 @@ msgstr "今すぐお問い合わせください。包括的なサービスでど
 
 msgid "Building trust through excellence and innovation"
 msgstr "卓越性と革新を通じた信頼の構築"
+
+msgid "Meet the dedicated professionals who bring expertise, passion, and commitment to serving our clients with excellence."
+msgstr "専門知識、情熱、そしてお客様に卓越したサービスを提供することを約束する献身的なプロフェッショナルとの出会いをご覧ください。"
+
+msgid "Team Members Coming Soon"
+msgstr "チームメンバーは近日公開予定"
+
+msgid "Our team information is being updated. Please check back later to meet our dedicated professionals."
+msgstr "チーム情報を更新中です。献身的なプロフェッショナルとの出会いのために、後ほど再度ご確認ください。"
+
+msgid "Message from Our CEO"
+msgstr "CEOからのメッセージ"
+
+msgid "Our Team Members"
+msgstr "チームメンバー"
