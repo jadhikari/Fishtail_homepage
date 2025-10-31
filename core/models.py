@@ -316,3 +316,28 @@ class BookingRequest(models.Model):
     
     class Meta:
         ordering = ['-created_at']
+
+class ContactMessage(models.Model):
+    unique_id = models.CharField(max_length=6, unique=True, blank=True, editable=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    name = models.CharField(max_length=255)
+    email = models.EmailField()
+    phone = models.CharField(max_length=20)
+    purpose = models.CharField(max_length=100)
+    message = models.TextField()
+    is_read = models.BooleanField(default=False)
+    
+    def save(self, *args, **kwargs):
+        if not self.unique_id:
+            self.unique_id = generate_random_id()
+            ModelClass = self.__class__
+            while ModelClass.objects.filter(unique_id=self.unique_id).exists():
+                self.unique_id = generate_random_id()
+        super().save(*args, **kwargs)
+    
+    def __str__(self):
+        return f"Contact from {self.name} - {self.email}"
+    
+    class Meta:
+        ordering = ['-created_at']

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import News, Blog, Video, Job, TeamMember, CompanyInfo, Service, Hostel, BookingRequest
+from .models import News, Blog, Video, Job, TeamMember, CompanyInfo, Service, Hostel, BookingRequest, ContactMessage
 
 class BaseModelAdmin(admin.ModelAdmin):
     list_display = ('unique_id','header_ja', 'header_en', 'created_at', 'user')
@@ -141,5 +141,22 @@ class BookingRequestAdmin(admin.ModelAdmin):
         }),
         ('Customer Information', {
             'fields': ('customer_name', 'email', 'phone_number', 'current_address', 'message')
+        }),
+    )
+
+@admin.register(ContactMessage)
+class ContactMessageAdmin(admin.ModelAdmin):
+    list_display = ('unique_id', 'name', 'email', 'phone', 'purpose', 'is_read', 'created_at')
+    search_fields = ('unique_id', 'name', 'email', 'phone', 'purpose')
+    readonly_fields = ('unique_id', 'created_at', 'updated_at')
+    list_filter = ('is_read', 'purpose', 'created_at')
+    list_editable = ('is_read',)
+    
+    fieldsets = (
+        ('Contact Information', {
+            'fields': ('name', 'email', 'phone', 'purpose', 'is_read')
+        }),
+        ('Message', {
+            'fields': ('message',)
         }),
     )

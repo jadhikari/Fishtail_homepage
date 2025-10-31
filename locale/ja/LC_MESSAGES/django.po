@@ -460,3 +460,12 @@ msgstr "確認"
 
 msgid "Thank you for your booking request! Our staff will contact you soon via email or phone to confirm your reservation."
 msgstr "ご予約リクエストありがとうございます！スタッフがすぐにメールまたは電話でご連絡し、予約を確認いたします。"
+
+msgid "Thank you for your message! We have received your inquiry and will contact you soon."
+msgstr "メッセージありがとうございます！お問い合わせを受け付けました。すぐにご連絡いたします。"
+
+msgid "Sorry, there was an error submitting your message. Please try again later."
+msgstr "申し訳ございません。メッセージの送信中にエラーが発生しました。しばらくしてからもう一度お試しください。"
+
+msgid "Thank you for contacting Fishtail Homes"
+msgstr "Fishtail Homesにお問い合わせいただきありがとうございます"

@@ -77,6 +77,25 @@ def contact(request):
         company_info = models.CompanyInfo.objects.get()
     except models.CompanyInfo.DoesNotExist:
         company_info = None
+    
+    if request.method == 'POST':
+        from django.contrib import messages
+        
+        try:
+            # Save contact message
+            models.ContactMessage.objects.create(
+                name=request.POST.get('name'),
+                email=request.POST.get('email'),
+                phone=request.POST.get('phone'),
+                purpose=request.POST.get('purpose'),
+                message=request.POST.get('message')
+            )
+            
+            messages.success(request, _('Thank you for your message! We have received your inquiry and will contact you soon.'))
+            
+        except Exception as e:
+            messages.error(request, _('Sorry, there was an error submitting your message. Please try again later.'))
+    
     return render(request, 'core/contact.html', {'company_info': company_info})
 
 def job_list_view(request):

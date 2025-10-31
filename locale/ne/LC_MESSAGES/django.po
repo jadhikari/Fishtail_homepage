@@ -460,3 +460,12 @@ msgstr "पुष्टि"
 
 msgid "Thank you for your booking request! Our staff will contact you soon via email or phone to confirm your reservation."
 msgstr "तपाईंको बुकिङ अनुरोधको लागि धन्यवाद! हाम्रा कर्मचारीहरूले चाँडै इमेल वा फोन मार्फत तपाईंसँग सम्पर्क गरी तपाईंको आरक्षण पुष्टि गर्नेछन्।"
+
+msgid "Thank you for your message! We have received your inquiry and will contact you soon."
+msgstr "तपाईंको सन्देशको लागि धन्यवाद! हामीले तपाईंको जानकारी प्राप्त गर्यौं र चाँडै सम्पर्क गर्नेछौं।"
+
+msgid "Sorry, there was an error submitting your message. Please try again later."
+msgstr "माफ गर्नुहोस्, तपाईंको सन्देश पेश गर्दा त्रुटि भयो। कृपया पछि फेरि प्रयास गर्नुहोस्।"
+
+msgid "Thank you for contacting Fishtail Homes"
+msgstr "Fishtail Homes सम्पर्क गरेकोमा धन्यवाद"
