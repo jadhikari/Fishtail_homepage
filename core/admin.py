@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import News, Blog, Video, Job,TeamMember, CompanyInfo
+from .models import News, Blog, Video, Job, TeamMember, CompanyInfo, Service
 
 class BaseModelAdmin(admin.ModelAdmin):
     list_display = ('unique_id','header_ja', 'header_en', 'created_at', 'user')
@@ -34,6 +34,33 @@ class JobAdmin(BaseModelAdmin):
 class TeamMemberAdmin(BaseModelAdmin):
     list_display = ('unique_id','name_en', 'name_ja', 'position_en', 'position_ja','created_at')
     search_fields = ('unique_id','name_en')
+
+@admin.register(Service)
+class ServiceAdmin(admin.ModelAdmin):
+    list_display = ('unique_id', 'title_en', 'icon', 'order', 'is_hostel_service', 'created_at')
+    search_fields = ('unique_id', 'title_en', 'title_ja', 'title_ne', 'icon')
+    readonly_fields = ('unique_id', 'created_at', 'updated_at')
+    list_filter = ('is_hostel_service', 'created_at')
+    list_editable = ('order', 'is_hostel_service')
+    
+    fieldsets = (
+        ('Basic Information', {
+            'fields': ('icon', 'order', 'is_hostel_service')
+        }),
+        ('Title', {
+            'fields': ('title_en', 'title_ja', 'title_ne')
+        }),
+        ('Description', {
+            'fields': ('description_en', 'description_ja', 'description_ne')
+        }),
+    )
+    
+    exclude = ('user',)
+    
+    def save_model(self, request, obj, form, change):
+        if not change:
+            obj.user = request.user
+        super().save_model(request, obj, form, change)
 
 @admin.register(CompanyInfo)
 class CompanyInfoAdmin(admin.ModelAdmin):

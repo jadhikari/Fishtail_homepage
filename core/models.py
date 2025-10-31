@@ -149,6 +149,29 @@ class TeamMember(BaseModel):
     def __str__(self):
         return self.get_translated_name()
 
+class Service(BaseModel):
+    icon = models.CharField(max_length=50, help_text="Bootstrap Icons class name (e.g., 'bi-house-door')")
+    title_ja = models.CharField(max_length=255)
+    title_en = models.CharField(max_length=255, blank=True, null=True)
+    title_ne = models.CharField(max_length=255, blank=True, null=True)
+    description_ja = CKEditor5Field()
+    description_en = CKEditor5Field(blank=True, null=True)
+    description_ne = CKEditor5Field(blank=True, null=True)
+    order = models.PositiveIntegerField(default=0, help_text="Display order (lower number appears first)")
+    is_hostel_service = models.BooleanField(default=False, help_text="Mark as specialized hostel service")
+    
+    def get_translated_title(self):
+        return self.get_translated_field('title')
+    
+    def get_translated_description(self):
+        return self.get_translated_field('description')
+
+    def __str__(self):
+        return self.get_translated_title()
+    
+    class Meta:
+        ordering = ['order', 'created_at']
+
 class CompanyInfo(BaseModel):
     name_en = models.CharField(max_length=255)
     name_ja = models.CharField(max_length=255)

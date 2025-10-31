@@ -23,8 +23,8 @@ def about(request):
     return render(request, "core/about.html", {"company_info": company_info})
 
 def services(request):
-    
-    return render(request, "core/services.html")
+    services_list = models.Service.objects.all().order_by('order', 'created_at')
+    return render(request, "core/services.html", {"services": services_list})
 
 def news_home(request):
     """Fetch the latest, trending, and all news for display."""

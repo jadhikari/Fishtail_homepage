@@ -17,6 +17,9 @@ msgstr "ホーム"
 msgid "About"
 msgstr "会社概要"
 
+msgid "Services"
+msgstr "サービス"
+
 msgid "News"
 msgstr "ニュース"
 
@@ -121,6 +124,18 @@ msgstr "仕事とニュースの未来を形作るプロフェッショナルや
 
 msgid "Our Mission"
 msgstr "私たちの使命"
+
+msgid "Mission"
+msgstr "使命"
+
+msgid "Vision"
+msgstr "ビジョン"
+
+msgid "Values"
+msgstr "価値観"
+
+msgid "Company Overview"
+msgstr "会社概要"
 
 msgid "Consolidated"
 msgstr "連結"
@@ -334,3 +349,36 @@ msgstr "入居・サポート"
 
 msgid "Enjoy ongoing support and assistance even after you've moved in or started your stay."
 msgstr "入居後や滞在開始後も、継続的なサポートと支援をご利用いただけます。"
+
+msgid "Our Services"
+msgstr "サービス一覧"
+
+msgid "We leverage our expertise in real estate and property management to provide comprehensive solutions, ensuring many foreigners can live in a safe and secure environment. We focus on building trust through personalized service, working towards achieving diversity in Japan through housing and business spaces."
+msgstr "不動産およびプロパティ管理における専門知識を活用し、包括的なソリューションを提供し、多くの外国人が安全で安心できる環境で暮らせるようにしています。パーソナライズされたサービスを通じて信頼を築くことに焦点を当て、住居やビジネススペースを通じて日本における多様性の実現に向けて取り組んでいます。"
+
+msgid "Our services are available in multiple languages including Nepali, English, and Hindi, ensuring seamless communication for our international clients. We also provide specialized support for hostel accommodations."
+msgstr "ネパール語、英語、ヒンディー語を含む複数の言語でサービスを提供しており、国際的なお客様との円滑なコミュニケーションを確保しています。また、ホステル宿泊施設の専門的なサポートも提供しています。"
+
+msgid "Multi-Language Support: Nepali, English, Hindi"
+msgstr "多言語サポート：ネパール語、英語、ヒンディー語"
+
+msgid "Hostel Support Available"
+msgstr "ホステルサポート利用可能"
+
+msgid "Specialized Service"
+msgstr "専門サービス"
+
+msgid "Learn More"
+msgstr "詳細を見る"
+
+msgid "No services available at the moment."
+msgstr "現在サービスは利用できません。"
+
+msgid "Ready to Get Started?"
+msgstr "始める準備はできていますか？"
+
+msgid "Contact us today to discuss your needs and discover how we can help you with our comprehensive services."
+msgstr "今すぐお問い合わせください。包括的なサービスでどのようにお手伝いできるかご説明します。"
+
+msgid "Building trust through excellence and innovation"
+msgstr "卓越性と革新を通じた信頼の構築"
