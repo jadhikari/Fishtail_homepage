@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import News, Blog, Video, Job, TeamMember, CompanyInfo, Service
+from .models import News, Blog, Video, Job, TeamMember, CompanyInfo, Service, Hostel, BookingRequest
 
 class BaseModelAdmin(admin.ModelAdmin):
     list_display = ('unique_id','header_ja', 'header_en', 'created_at', 'user')
@@ -93,3 +93,53 @@ class CompanyInfoAdmin(admin.ModelAdmin):
         if not change:
             obj.user = request.user
         super().save_model(request, obj, form, change)
+
+@admin.register(Hostel)
+class HostelAdmin(admin.ModelAdmin):
+    list_display = ('unique_id', 'name_en', 'total_beds', 'available_beds', 'price_per_month', 'is_active', 'created_at')
+    search_fields = ('unique_id', 'name_en', 'name_ja', 'name_ne', 'address_en', 'address_ja', 'address_ne')
+    readonly_fields = ('unique_id', 'created_at', 'updated_at')
+    list_filter = ('is_active', 'created_at')
+    list_editable = ('is_active',)
+    
+    fieldsets = (
+        ('Basic Information', {
+            'fields': ('image', 'is_active')
+        }),
+        ('Hostel Name', {
+            'fields': ('name_en', 'name_ja', 'name_ne')
+        }),
+        ('Address', {
+            'fields': ('address_en', 'address_ja', 'address_ne')
+        }),
+        ('Features', {
+            'fields': ('features_en', 'features_ja', 'features_ne')
+        }),
+        ('Bed Information', {
+            'fields': ('total_beds', 'available_beds', 'price_per_month')
+        }),
+    )
+    
+    exclude = ('user',)
+    
+    def save_model(self, request, obj, form, change):
+        if not change:
+            obj.user = request.user
+        super().save_model(request, obj, form, change)
+
+@admin.register(BookingRequest)
+class BookingRequestAdmin(admin.ModelAdmin):
+    list_display = ('unique_id', 'customer_name', 'hostel', 'phone_number', 'email', 'status', 'created_at')
+    search_fields = ('unique_id', 'customer_name', 'email', 'phone_number', 'hostel__name_en')
+    readonly_fields = ('unique_id', 'created_at', 'updated_at')
+    list_filter = ('status', 'created_at', 'hostel')
+    list_editable = ('status',)
+    
+    fieldsets = (
+        ('Booking Information', {
+            'fields': ('hostel', 'status', 'user')
+        }),
+        ('Customer Information', {
+            'fields': ('customer_name', 'email', 'phone_number', 'current_address', 'message')
+        }),
+    )

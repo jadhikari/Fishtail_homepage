@@ -400,3 +400,63 @@ msgstr "営業時間"
 
 msgid "Monday - Friday"
 msgstr "月曜日 - 金曜日"
+
+msgid "Hostel Accommodation"
+msgstr "ホステル宿泊施設"
+
+msgid "Find comfortable and affordable hostel accommodation for your stay in Japan. Our hostels offer safe, clean, and convenient living spaces with all essential amenities."
+msgstr "日本での滞在に快適で手頃な価格のホステル宿泊施設を見つけましょう。私たちのホステルは、すべての基本的な設備を備えた安全で清潔で便利な生活空間を提供しています。"
+
+msgid "Available"
+msgstr "利用可能"
+
+msgid "Full"
+msgstr "満室"
+
+msgid "Total Beds"
+msgstr "総ベッド数"
+
+msgid "Available Beds"
+msgstr "利用可能なベッド"
+
+msgid "Monthly Rent"
+msgstr "月額"
+
+msgid "Features"
+msgstr "特徴"
+
+msgid "Book Now"
+msgstr "今すぐ予約"
+
+msgid "Not Available"
+msgstr "利用不可"
+
+msgid "Book"
+msgstr "予約"
+
+msgid "Hostel Information"
+msgstr "ホステル情報"
+
+msgid "Hostel Name"
+msgstr "ホステル名"
+
+msgid "Additional Message"
+msgstr "追加メッセージ"
+
+msgid "Submit Booking Request"
+msgstr "予約リクエストを送信"
+
+msgid "No Hostels Available"
+msgstr "ホステルは利用できません"
+
+msgid "We are currently updating our hostel listings. Please check back later for available accommodations."
+msgstr "現在、ホステルリストを更新中です。利用可能な宿泊施設については、後ほど再度ご確認ください。"
+
+msgid "Optional"
+msgstr "任意"
+
+msgid "Confirmation"
+msgstr "確認"
+
+msgid "Thank you for your booking request! Our staff will contact you soon via email or phone to confirm your reservation."
+msgstr "ご予約リクエストありがとうございます！スタッフがすぐにメールまたは電話でご連絡し、予約を確認いたします。"

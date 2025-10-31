@@ -400,3 +400,63 @@ msgstr "व्यावसायिक समय"
 
 msgid "Monday - Friday"
 msgstr "सोमबार - शुक्रबार"
+
+msgid "Hostel Accommodation"
+msgstr "होस्टेल आवास"
+
+msgid "Find comfortable and affordable hostel accommodation for your stay in Japan. Our hostels offer safe, clean, and convenient living spaces with all essential amenities."
+msgstr "जापानमा तपाईंको बसाइका लागि आरामदायी र सस्तो होस्टेल आवास फेला पार्नुहोस्। हाम्रा होस्टेलहरूले सबै आवश्यक सुविधाहरूको साथ सुरक्षित, सफा, र सुविधाजनक बसाइ स्थानहरू प्रदान गर्दछन्।"
+
+msgid "Available"
+msgstr "उपलब्ध"
+
+msgid "Full"
+msgstr "भरिएको"
+
+msgid "Total Beds"
+msgstr "कूल ओछ्यानहरू"
+
+msgid "Available Beds"
+msgstr "उपलब्ध ओछ्यानहरू"
+
+msgid "Monthly Rent"
+msgstr "मासिक किराया"
+
+msgid "Features"
+msgstr "विशेषताहरू"
+
+msgid "Book Now"
+msgstr "अब बुक गर्नुहोस्"
+
+msgid "Not Available"
+msgstr "उपलब्ध छैन"
+
+msgid "Book"
+msgstr "बुक"
+
+msgid "Hostel Information"
+msgstr "होस्टेल जानकारी"
+
+msgid "Hostel Name"
+msgstr "होस्टेल नाम"
+
+msgid "Additional Message"
+msgstr "थप सन्देश"
+
+msgid "Submit Booking Request"
+msgstr "बुकिङ अनुरोध पेश गर्नुहोस्"
+
+msgid "No Hostels Available"
+msgstr "कुनै होस्टेल उपलब्ध छैन"
+
+msgid "We are currently updating our hostel listings. Please check back later for available accommodations."
+msgstr "हामी हाल हाम्रा होस्टेल सूचीहरू अपडेट गर्दैछौं। कृपया उपलब्ध आवासहरूका लागि पछि फेरि जाँच गर्नुहोस्।"
+
+msgid "Optional"
+msgstr "वैकल्पिक"
+
+msgid "Confirmation"
+msgstr "पुष्टि"
+
+msgid "Thank you for your booking request! Our staff will contact you soon via email or phone to confirm your reservation."
+msgstr "तपाईंको बुकिङ अनुरोधको लागि धन्यवाद! हाम्रा कर्मचारीहरूले चाँडै इमेल वा फोन मार्फत तपाईंसँग सम्पर्क गरी तपाईंको आरक्षण पुष्टि गर्नेछन्।"

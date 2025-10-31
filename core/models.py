@@ -242,3 +242,77 @@ class CompanyInfo(BaseModel):
 
     def __str__(self):
         return self.get_translated_name()
+
+class Hostel(BaseModel):
+    image = models.ImageField(upload_to='hostel_images/')
+    name_en = models.CharField(max_length=255)
+    name_ja = models.CharField(max_length=255, blank=True, null=True)
+    name_ne = models.CharField(max_length=255, blank=True, null=True)
+    address_en = models.TextField()
+    address_ja = models.TextField(blank=True, null=True)
+    address_ne = models.TextField(blank=True, null=True)
+    features_en = CKEditor5Field()
+    features_ja = CKEditor5Field(blank=True, null=True)
+    features_ne = CKEditor5Field(blank=True, null=True)
+    total_beds = models.PositiveIntegerField(default=0)
+    available_beds = models.PositiveIntegerField(default=0)
+    price_per_month = models.DecimalField(max_digits=10, decimal_places=2, help_text="Monthly rent in JPY")
+    is_active = models.BooleanField(default=True)
+    
+    def get_translated_name(self):
+        return self.get_translated_field('name')
+    
+    def get_translated_address(self):
+        return self.get_translated_field('address')
+    
+    def get_translated_features(self):
+        return self.get_translated_field('features')
+    
+    def get_occupancy_rate(self):
+        """Calculate occupancy rate percentage"""
+        if self.total_beds == 0:
+            return 0
+        occupied = self.total_beds - self.available_beds
+        return round((occupied / self.total_beds) * 100, 1)
+    
+    def __str__(self):
+        return self.get_translated_name()
+    
+    class Meta:
+        ordering = ['-created_at']
+
+class BookingRequest(models.Model):
+    unique_id = models.CharField(max_length=6, unique=True, blank=True, editable=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, blank=True, null=True)
+    hostel = models.ForeignKey(Hostel, on_delete=models.CASCADE, related_name='booking_requests')
+    customer_name = models.CharField(max_length=255)
+    phone_number = models.CharField(max_length=20)
+    current_address = models.TextField()
+    email = models.EmailField()
+    message = models.TextField(blank=True, null=True, help_text="Additional message or requirements")
+    status = models.CharField(
+        max_length=20,
+        choices=[
+            ('pending', 'Pending'),
+            ('confirmed', 'Confirmed'),
+            ('cancelled', 'Cancelled'),
+        ],
+        default='pending'
+    )
+    
+    def save(self, *args, **kwargs):
+        if not self.unique_id:
+            self.unique_id = generate_random_id()
+            # Ensure the generated ID is unique for the model.
+            ModelClass = self.__class__
+            while ModelClass.objects.filter(unique_id=self.unique_id).exists():
+                self.unique_id = generate_random_id()
+        super().save(*args, **kwargs)
+    
+    def __str__(self):
+        return f"Booking from {self.customer_name} - {self.hostel.get_translated_name()}"
+    
+    class Meta:
+        ordering = ['-created_at']

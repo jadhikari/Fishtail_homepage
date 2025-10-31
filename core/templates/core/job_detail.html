@@ -15,13 +15,14 @@
             <div class="card border-0 shadow-lg p-3">
                 <div class="card-body">
                     <h5 class="card-title">{% trans "Job Details" %}</h5>
+                    <h6 class="card-title">{{ job.unique_id }}</h6>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item"><strong>{% trans "Posted On:" %}</strong> {{ job.created_at|date:"F j, Y" }}</li>
                         <li class="list-group-item"><strong>{% trans "Last Updated:" %}</strong> {{ job.updated_at|date:"F j, Y" }}</li>
                     </ul>
                     <div class="btn-container">
                         {% comment %} <a href="{% url 'apply_job' job.unique_id %}" class="btn btn-success mt-3">{% trans "Apply Now" %}</a> {% endcomment %}
-                        <a href="#" class="btn btn-sm btn-success mt-3">{% trans "Apply Now" %}</a>
+                        <a href="{% url 'contact' %}" class="btn btn-sm btn-success mt-3">{% trans "Apply Now" %}</a>
                         <a href="{% url 'career' %}" class="btn btn-sm btn-primary mt-3">{% trans "Back to job list" %}</a>
                     </div>
                     

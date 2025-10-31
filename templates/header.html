@@ -34,6 +34,11 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link {% if '/hostel' in request.path %}active{% endif %}" href="{% url 'hostel' %}">
+                        <i class="bi bi-h-square"></i> {% trans "Hostel" %}
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link {% if '/team' in request.path %}active{% endif %}" href="{% url 'team' %}">
                         <i class="bi bi-people"></i> {% trans "Members" %}
                     </a>

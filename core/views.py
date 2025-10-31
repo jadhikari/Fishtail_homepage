@@ -4,7 +4,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Q
 from . import models  
 from datetime import datetime
-from django.utils.translation import get_language
+from django.utils.translation import get_language, gettext as _
 
 
 def home(request):
@@ -115,5 +115,32 @@ def job_detail_view(request, unique_id):
         'job': job
     }
     return render(request, 'core/job_detail.html', context)
+
+def hostel_view(request):
+    hostels = models.Hostel.objects.filter(is_active=True).order_by('-created_at')
+    return render(request, 'core/hostel.html', {'hostels': hostels})
+
+def hostel_booking(request, unique_id):
+    """Handle hostel booking form submission"""
+    hostel = get_object_or_404(models.Hostel, unique_id=unique_id, is_active=True)
+    
+    if request.method == 'POST':
+        from django.contrib import messages
+        from django.shortcuts import redirect
+        
+        booking = models.BookingRequest.objects.create(
+            hostel=hostel,
+            customer_name=request.POST.get('customer_name'),
+            phone_number=request.POST.get('phone_number'),
+            current_address=request.POST.get('current_address'),
+            email=request.POST.get('email'),
+            message=request.POST.get('message', ''),
+            user=request.user if request.user.is_authenticated else None
+        )
+        
+        messages.success(request, _('Thank you for your booking request! Our staff will contact you soon via email or phone to confirm your reservation.'))
+        return redirect('hostel')
+    
+    return render(request, 'core/hostel.html', {'hostels': models.Hostel.objects.filter(is_active=True)})
 
 
