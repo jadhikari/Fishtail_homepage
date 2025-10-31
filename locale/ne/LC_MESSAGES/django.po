@@ -93,7 +93,7 @@ msgid "Number of Employees"
 msgstr "कर्मचारी संख्या "
 
 msgid "Business Portfolio"
-msgstr ""
+msgstr "従業員数"
 
 msgid "Tokyo Office"
 msgstr "टोकियो कार्यालय"
@@ -215,9 +215,6 @@ msgstr "हाम्रो कार्यालय"
 msgid "Address"
 msgstr "ठेगाना"
 
-msgid "Phone"
-msgstr "फोन"
-
 msgid "Email"
 msgstr "इमेल"
 
@@ -235,6 +232,9 @@ msgstr "तपाईंको इमेल"
 
 msgid "Phone Number"
 msgstr "फोन नम्बर"
+
+msgid "Fax Number"
+msgstr "Fax नम्बर"
 
 msgid "Your Address"
 msgstr "तपाईंको ठेगाना"

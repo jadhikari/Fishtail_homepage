@@ -52,7 +52,7 @@ class CompanyInfoAdmin(admin.ModelAdmin):
             'fields': ('office_address_en', 'office_address_ja', 'office_address_ne', 'office_tel', 'office_fax', 'license_details_en', 'license_details_ja', 'license_details_ne')
         }),
         ('About & Mission', {
-            'fields': ('about_en', 'about_ja', 'about_ne', 'mission_en', 'mission_ja', 'mission_ne')
+            'fields': ('about_en', 'about_ja', 'about_ne', 'mission_en', 'mission_ja', 'mission_ne', 'vision_en', 'vision_ja', 'vision_ne', 'values_en', 'values_ja', 'values_ne')
         }),
     )
     

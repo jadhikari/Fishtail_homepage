@@ -215,9 +215,6 @@ msgstr "当社オフィス"
 msgid "Address"
 msgstr "住所"
 
-msgid "Phone"
-msgstr "電話"
-
 msgid "Email"
 msgstr "メール"
 
@@ -235,6 +232,9 @@ msgstr "メールアドレス"
 
 msgid "Phone Number"
 msgstr "電話番号"
+
+msgid "Fax Number"
+msgstr "Fax 号"
 
 msgid "Your Address"
 msgstr "ご住所"

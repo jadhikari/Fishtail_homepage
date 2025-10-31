@@ -1,132 +1,193 @@
 {% extends "base.html" %}
-{% load i18n %}
+{% load static i18n %}
+
+{% block title %}{% trans "About Us" %} | Fishtail Homes{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'core/core.css' %}">
+    <style>
+        .mission-card {
+            transition: all 0.3s ease;
+        }
+        .mission-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(41, 152, 204, 0.15) !important;
+            border-color: var(--fishtail-primary, #2998cc) !important;
+        }
+        .mission-card:hover .icon-wrapper {
+            transform: scale(1.1);
+        }
+    </style>
+{% endblock %}
+
 {% block content %}
-<div class="container my-5">
+    <!-- Hero Section -->
+    <section class="py-3 bg-light border-bottom">
+        <div class="container">
+            <div class="position-relative">
+                <div class="position-absolute top-0 start-0" style="width: 120px; height: 3px; background: var(--fishtail-primary, #2998cc);"></div>
+                <div style="padding-top: 2px;">
+                    <h1 class="display-5 fw-semibold text-dark mb-4" style="letter-spacing: -0.02em; position: relative;">
+                        {% trans "Company Information" %}
+                        <span class="position-absolute bottom-0 d-block" style="left: 0; width: 60px; height: 3px; background: var(--fishtail-primary, #2998cc); border-radius: 2px; transform: translateY(12px);"></span>
+                    </h1>
+                    <p class="text-muted fw-light mb-0" style="max-width: 750px; line-height: 1.6; font-size: 1rem;">
+                        {% trans "Building trust through excellence and innovation" %}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     {% if company_info %}
-    <div class="row align-items-center">
-        <div class="col-lg-6">
-            <h1 class="text-center display-4 fw-bold">{% trans "About Us" %}</h1>
-            {{ company_info.get_translated_about | safe}}
+    <!-- About Content Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-stretch">
+                <div class="col-lg-6 d-flex align-items-center mb-4 mb-lg-0">
+                    <div class="text-muted" style="line-height: 1.7;">
+                        {{ company_info.get_translated_about | safe }}
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="rounded-3 overflow-hidden shadow-lg" style="max-height: 400px; transition: transform 0.4s ease;">
+                        <img src="{% static 'images/about.jpg' %}" alt="{% trans 'About Us' %}" class="w-100 h-100 object-fit-cover" style="max-height: 400px;">
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-lg-6">
-            <img src="../../static/images/about.jpg" alt="About Us" class="img-fluid rounded shadow" 
-                style="height:400px; width:100%;">
+    </section>
+
+    <!-- Mission, Vision, Values Section -->
+    <section class="py-5 bg-white">
+        <div class="container">
+            <div class="row">
+                <!-- Mission -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card mission-card h-100 border-2 rounded-3 shadow-lg">
+                        <div class="card-body text-center p-4">
+                            <div class="icon-wrapper rounded-circle mx-auto mb-4 d-flex align-items-center justify-content-center" 
+                                 style="width: 65px; height: 65px; background: linear-gradient(135deg, var(--fishtail-primary, #2998cc) 0%, var(--fishtail-secondary, #1e3a8a) 100%); transition: transform 0.3s ease;">
+                                <i class="bi bi-bullseye text-white" style="font-size: 1.8rem;"></i>
+                            </div>
+                            <h3 class="h5 fw-semibold mb-3">{% trans "Mission" %}</h3>
+                            <p class="text-muted mb-0" style="line-height: 1.7;">{{ company_info.get_translated_mission | safe }}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vision -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card mission-card h-100 border-2 rounded-3 shadow-lg">
+                        <div class="card-body text-center p-4">
+                            <div class="icon-wrapper rounded-circle mx-auto mb-4 d-flex align-items-center justify-content-center" 
+                                 style="width: 65px; height: 65px; background: linear-gradient(135deg, var(--fishtail-primary, #2998cc) 0%, var(--fishtail-secondary, #1e3a8a) 100%); transition: transform 0.3s ease;">
+                                <i class="bi bi-eye text-white" style="font-size: 1.8rem;"></i>
+                            </div>
+                            <h3 class="h5 fw-semibold mb-3">{% trans "Vision" %}</h3>
+                            <p class="text-muted mb-0" style="line-height: 1.7;">{{ company_info.get_translated_vision | safe }}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Values -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card mission-card h-100 border-2 rounded-3 shadow-lg">
+                        <div class="card-body text-center p-4">
+                            <div class="icon-wrapper rounded-circle mx-auto mb-4 d-flex align-items-center justify-content-center" 
+                                 style="width: 65px; height: 65px; background: linear-gradient(135deg, var(--fishtail-primary, #2998cc) 0%, var(--fishtail-secondary, #1e3a8a) 100%); transition: transform 0.3s ease;">
+                                <i class="bi bi-heart text-white" style="font-size: 1.8rem;"></i>
+                            </div>
+                            <h3 class="h5 fw-semibold mb-3">{% trans "Values" %}</h3>
+                            <p class="text-muted mb-0" style="line-height: 1.7;">{{ company_info.get_translated_values | safe }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
     {% else %}
     <!-- No Company Info Available -->
-    <div class="row">
-        <div class="col-12 text-center">
-            <h1 class="display-4 fw-bold mb-4">{% trans "About Us" %}</h1>
-            <div class="alert alert-info">
-                <h4>{% trans "Company Information Coming Soon" %}</h4>
-                <p>{% trans "We are currently updating our company information. Please check back later for detailed information about our company." %}</p>
-            </div>
-            <div class="mt-4">
-                <img src="../../static/images/about.jpg" alt="About Us" class="img-fluid rounded shadow" 
-                    style="height:400px; width:100%;">
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="text-center border border-2 border-dashed rounded-3 p-5 bg-white">
+                        <i class="bi bi-info-circle text-muted" style="font-size: 3rem;"></i>
+                        <h3 class="h5 text-muted mt-3 mb-2">{% trans "Company Information Coming Soon" %}</h3>
+                        <p class="text-muted mb-0">{% trans "We are currently updating our company information. Please check back later for detailed information about our company." %}</p>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
     {% endif %}
 
     {% if company_info %}
     <!-- Company Information Section -->
-    <div class="row mt-5">
-        <div class="col">
-            <h2 class="text-center mb-4">{% trans "Company Information" %}</h2>
-            <div class="table-responsive">
-                <table class="table table-bordered table-striped">
-                    <tbody>
-                        <tr>
-                            <th scope="row">{% trans "Company Name" %}</th>
-                            <td>{{ company_info.get_translated_name }}</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">{% trans "Establishment" %}</th>
-                            <td>{{ company_info.establishment_date }}</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">{% trans "Representatives" %}</th>
-                            <td>{{ company_info.get_translated_representative }}</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">{% trans "Capital" %}</th>
-                            <td>{{ company_info.capital }}</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">{% trans "Number of Employees" %}</th>
-                            <td>{{ company_info.employees_num }}</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">{% trans "Business Portfolio" %}</th>
-                            <td>{{ company_info.get_translated_business_portfolio | safe }}</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">{% trans "Tokyo Office" %}</th>
-                            <td>
-                                {{ company_info.get_translated_office_address | safe }}
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">{% trans "License number" %}</th>
-                            <td>{{ company_info.get_translated_license_details | safe }}</td>
-                        </tr>
-                    </tbody>
-                </table>
+    <section class="py-5" style="background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);">
+        <div class="container">
+            <h2 class="text-center fw-semibold mb-5 position-relative pb-4">
+                {% trans "Company Overview" %}
+                <span class="position-absolute bottom-0 start-50 translate-middle-x d-block" 
+                      style="width: 70px; height: 4px; background: linear-gradient(90deg, var(--fishtail-primary, #2998cc), var(--fishtail-secondary, #1e3a8a)); border-radius: 3px;"></span>
+            </h2>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="card shadow-sm border-2 rounded-3 overflow-hidden">
+                        <table class="table table-sm table-hover mb-0">
+                            <tbody>
+                                <tr>
+                                    <th scope="row" class="w-auto fw-semibold text-center align-middle" style="background: linear-gradient(135deg, var(--fishtail-primary, #2998cc) 0%, var(--fishtail-secondary, #1e3a8a) 100%); color: white; padding: 15px 20px; letter-spacing: 0.3px;">{% trans "Company Name" %}</th>
+                                    <td class="py-3 px-4">{{ company_info.get_translated_name }}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="w-auto fw-semibold text-center align-middle" style="background: linear-gradient(135deg, var(--fishtail-primary, #2998cc) 0%, var(--fishtail-secondary, #1e3a8a) 100%); color: white; padding: 15px 20px; letter-spacing: 0.3px;">{% trans "Establishment" %}</th>
+                                    <td class="py-3 px-4">{{ company_info.establishment_date }}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="w-auto fw-semibold text-center align-middle" style="background: linear-gradient(135deg, var(--fishtail-primary, #2998cc) 0%, var(--fishtail-secondary, #1e3a8a) 100%); color: white; padding: 15px 20px; letter-spacing: 0.3px;">{% trans "Representatives" %}</th>
+                                    <td class="py-3 px-4">{{ company_info.get_translated_representative }}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="w-auto fw-semibold text-center align-middle" style="background: linear-gradient(135deg, var(--fishtail-primary, #2998cc) 0%, var(--fishtail-secondary, #1e3a8a) 100%); color: white; padding: 15px 20px; letter-spacing: 0.3px;">{% trans "Capital" %}</th>
+                                    <td class="py-3 px-4">{{ company_info.capital }}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="w-auto fw-semibold text-center align-middle" style="background: linear-gradient(135deg, var(--fishtail-primary, #2998cc) 0%, var(--fishtail-secondary, #1e3a8a) 100%); color: white; padding: 15px 20px; letter-spacing: 0.3px;">{% trans "Number of Employees" %}</th>
+                                    <td class="py-3 px-4">{{ company_info.employees_num }}名</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="w-auto fw-semibold text-center align-middle" style="background: linear-gradient(135deg, var(--fishtail-primary, #2998cc) 0%, var(--fishtail-secondary, #1e3a8a) 100%); color: white; padding: 15px 20px; letter-spacing: 0.3px;">{% trans "Business Portfolio" %}</th>
+                                    <td class="py-3 px-4">{{ company_info.get_translated_business_portfolio | safe }}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="w-auto fw-semibold text-center align-middle" style="background: linear-gradient(135deg, var(--fishtail-primary, #2998cc) 0%, var(--fishtail-secondary, #1e3a8a) 100%); color: white; padding: 15px 20px; letter-spacing: 0.3px;">{% trans "Tokyo Office" %}</th>
+                                    <td class="py-3 px-4">
+                                        {{ company_info.get_translated_office_address | safe }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="w-auto fw-semibold text-center align-middle" style="background: linear-gradient(135deg, var(--fishtail-primary, #2998cc) 0%, var(--fishtail-secondary, #1e3a8a) 100%); color: white; padding: 15px 20px; letter-spacing: 0.3px;">{% trans "Phone Number" %}</th>
+                                    <td class="py-3 px-4">{{ company_info.office_tel }}</td>
+                                </tr>
+                                {% if company_info.office_fax %}
+                                <tr>
+                                    <th scope="row" class="w-auto fw-semibold text-center align-middle" style="background: linear-gradient(135deg, var(--fishtail-primary, #2998cc) 0%, var(--fishtail-secondary, #1e3a8a) 100%); color: white; padding: 15px 20px; letter-spacing: 0.3px;">{% trans "Fax Number" %}</th>
+                                    <td class="py-3 px-4">{{ company_info.office_fax }}</td>
+                                </tr>
+                                {% endif %}
+                                <tr>
+                                    <th scope="row" class="w-auto fw-semibold text-center align-middle" style="background: linear-gradient(135deg, var(--fishtail-primary, #2998cc) 0%, var(--fishtail-secondary, #1e3a8a) 100%); color: white; padding: 15px 20px; letter-spacing: 0.3px;">{% trans "License number" %}</th>
+                                    <td class="py-3 px-4">{{ company_info.get_translated_license_details | safe }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
     {% endif %}
-
-    <div class="row mt-5">
-        <div class="col-md-4">
-            <div class="card h-100 shadow">
-                <div class="card-body text-center">
-                    <i class="bi bi-newspaper fs-1 text-primary"></i>
-                    <h5 class="card-title mt-3">
-                        <a href="{% url 'news' %}" class="text-decoration-none">
-                            {% trans "Reliable News" %}
-                        </a>
-                    </h5>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card h-100 shadow">
-                <div class="card-body text-center">
-                    <i class="bi bi-briefcase fs-1 text-success"></i>
-                    <h5 class="card-title mt-3">
-                        <a href="{% url 'career' %}" class="text-decoration-none">
-                            {% trans "Career Insights" %}
-                        </a>
-                    </h5>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card h-100 shadow">
-                <div class="card-body text-center">
-                    <i class="bi bi-people fs-1 text-danger"></i>
-                    <h5 class="card-title mt-3">
-                        <a href="#" class="text-decoration-none">
-                            {% trans "Community Engagement" %}
-                        </a>
-                    </h5>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    {% if company_info %}
-    <div class="row mt-5">
-        <div class="col text-center">
-            <h2>{% trans "Our Mission" %}</h2>
-            <p class="lead">
-                {{ company_info.get_translated_mission | safe }}
-            </p>
-        </div>
-    </div>
-    {% endif %}
-</div>
 {% endblock %}

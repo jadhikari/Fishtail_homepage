@@ -176,6 +176,12 @@ class CompanyInfo(BaseModel):
     mission_en = CKEditor5Field()
     mission_ja = CKEditor5Field(blank=True, null=True)
     mission_ne = CKEditor5Field(blank=True, null=True)
+    vision_en = CKEditor5Field()
+    vision_ja = CKEditor5Field(blank=True, null=True)
+    vision_ne = CKEditor5Field(blank=True, null=True)
+    values_en = CKEditor5Field()
+    values_ja = CKEditor5Field(blank=True, null=True)
+    values_ne = CKEditor5Field(blank=True, null=True)
     
     
     def save(self, *args, **kwargs):
@@ -204,7 +210,11 @@ class CompanyInfo(BaseModel):
     def get_translated_mission(self):
         return self.get_translated_field('mission')
 
+    def get_translated_vision(self):
+        return self.get_translated_field('vision')
 
+    def get_translated_values(self):
+        return self.get_translated_field('values')
 
     def __str__(self):
         return self.get_translated_name()
