@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     
-    'accounts',
     'django_ckeditor_5',
     'core',
 ]
@@ -229,9 +228,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-#custome setting 
 
-AUTH_USER_MODEL = 'accounts.CustomUser'
 
 
 LANGUAGES = [
