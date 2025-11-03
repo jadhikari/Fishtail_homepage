@@ -177,6 +177,8 @@ cython_debug/
 !*/migrations/__init__.py
 staticfiles/
 media/
+.env.development
+.env.production
 
 
 
