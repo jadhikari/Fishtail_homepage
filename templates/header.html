@@ -60,11 +60,11 @@
                     <button class="btn btn-sm btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"
                         style="min-width: 120px; font-size: 14px;">
                         {% if request.LANGUAGE_CODE == 'en' %}
-                            🇬🇧 English
+                            <img src="{% static 'flags/gb.png' %}" width="18"> English
                         {% elif request.LANGUAGE_CODE == 'ja' %}
-                            🇯🇵 日本語
+                            <img src="{% static 'flags/jp.png' %}" width="18"> 日本語
                         {% elif request.LANGUAGE_CODE == 'ne' %}
-                            🇳🇵 नेपाली
+                            <img src="{% static 'flags/np.png' %}" width="18">  नेपाली
                         {% else %}
                             🌍 Language
                         {% endif %}
