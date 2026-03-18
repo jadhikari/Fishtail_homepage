@@ -72,17 +72,17 @@
                     <ul class="dropdown-menu dropdown-menu-start" style="min-width: 120px; font-size: 14px; padding: 5px 10px;">
                         <li>
                             <button class="dropdown-item {% if request.LANGUAGE_CODE == 'en' %}active{% endif %}" type="submit" name="language" value="en">
-                                🇬🇧 English
+                               <img src="{% static 'flags/gb.png' %}" width="18"> English
                             </button>
                         </li>
                         <li>
                             <button class="dropdown-item {% if request.LANGUAGE_CODE == 'ja' %}active{% endif %}" type="submit" name="language" value="ja">
-                                🇯🇵 日本語
+                               <img src="{% static 'flags/jp.png' %}" width="18"> 日本語
                             </button>
                         </li>
                         <li>
                             <button class="dropdown-item {% if request.LANGUAGE_CODE == 'ne' %}active{% endif %}" type="submit" name="language" value="ne">
-                                🇳🇵 नेपाली
+                                <img src="{% static 'flags/np.png' %}" width="18">  नेपाली
                             </button>
                         </li>
                     </ul>
